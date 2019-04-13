@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>        
+<!--=========================================  paym mode  inherit   ===============================================================================-->
+       <record id="showinvoice_payment_mode_form" model="ir.ui.view">
+            <field name="name">showinvoice.payment.mode.form.inherit</field>
+            <field name="model">payment.mode</field>
+            <field name="inherit_id" ref="account_payment.view_payment_mode_form"/>
+            <field name="arch" type="xml"> 
+              <xpath expr="//field[@name='journal']" position="after">
+                    <field name='invoice_show' />
+              </xpath>
+            </field>
+       </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,33 @@
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="mrp_repair_laborales_form_view">
+            <field name="name">mrp.repair.laborales.inh.form</field>
+            <field name="model">mrp.repair</field>
+            <field name="inherit_id" ref="mrp_repair.view_repair_order_form"/>
+            <field name="arch" type="xml">
+                <field name="guarantee_limit" position="before">
+                     <field name="repair_ready_date"/>
+                     <field name="fecha_reparacion"/>
+                </field>
+                <field name="guarantee_limit" position="after">
+                     <field name="num_dias_laborales"/>
+                </field>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="mrp_repair_laborales_tree_view">
+            <field name="name">mrp.repair.laborales.tree.form</field>
+            <field name="model">mrp.repair</field>
+            <field name="inherit_id" ref="mrp_repair.view_repair_order_tree"/>
+            <field name="arch" type="xml">
+                <field name="guarantee_limit" position="before">
+                     <field name="num_dias_laborales"/>
+                </field>
+            </field>
+        </record>
+
+
+    </data>
+</openerp>

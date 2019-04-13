@@ -1,0 +1,66 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# * liderit_sale_line_properties_price
+# 
+# Translators:
+# Iván Todorovich <ivan.todorovich@gmail.com>, 2017
+# OCA Transbot <transbot@odoo-community.org>, 2017
+# Pedro M. Baeza <pedro.baeza@gmail.com>, 2017
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-10 06:00+0000\n"
+"PO-Revision-Date: 2017-06-10 06:00+0000\n"
+"Last-Translator: Pedro M. Baeza <pedro.baeza@gmail.com>, 2017\n"
+"Language-Team: Spanish (https://www.transifex.com/oca/teams/23907/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. module: liderit_sale_line_properties_price
+#: code:addons/liderit_sale_line_properties_price/models/sale_order_line.py:25
+#, python-format
+msgid "Error"
+msgstr "Error"
+
+#. module: liderit_sale_line_properties_price
+#: field:product.product,price_formula_id:0
+msgid "Price formula"
+msgstr ""
+
+#. module: liderit_sale_line_properties_price
+#: model:ir.model,name:liderit_sale_line_properties_price.model_product_product
+msgid "Product"
+msgstr "Producto"
+
+#. module: liderit_sale_line_properties_price
+#: model:ir.model,name:liderit_sale_line_properties_price.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: liderit_sale_line_properties_price
+#: code:addons/liderit_sale_line_properties_price/models/sale_order_line.py:26
+#, python-format
+msgid "Property of group %s already present"
+msgstr ""
+
+#. module: liderit_sale_line_properties_price
+#: model:ir.model,name:liderit_sale_line_properties_price.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea de pedido de venta"
+
+#. module: liderit_sale_line_properties_price
+#: help:product.product,price_formula_id:0
+msgid ""
+"You can use the variables\n"
+" - self\n"
+" - cr\n"
+" - uid\n"
+" - ptype\n"
+" - product_id\n"
+" - properties (dictionary of properties)\n"
+"You have to put the result in the 'result' variable"
+msgstr ""

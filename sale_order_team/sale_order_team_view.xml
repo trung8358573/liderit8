@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+      #sustituimos el campo user_id por el de section_id para mostrar el equipo de ventas en el view_order
+  	 	<record id="sale_order_team_tree" model="ir.ui.view">
+            <field name="name">sale.order.team.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="replace">
+                    <field name="section_id"/>
+                </field>
+            </field>
+        </record>
+
+      #sustituimos el campo user_id por el de section_id para mostrar el equipo de ventas en el view_quotation
+      <record id="sale_quotation_team_tree" model="ir.ui.view">
+            <field name="name">sale.quotation.team.tree</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <field name="user_id" position="replace">
+                    <field name="section_id"/>
+                </field>
+            </field>
+        </record>
+
+      #ampliamos los filtros para permitir agrupar por equipo de ventas
+      <record id="sale_order_search_by_section" model="ir.ui.view">
+            <field name="name">sale.order.section.search</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search/group" position="inside">
+                    <filter string="Sales Team" domain="[]" context="{'group_by':'section_id'}"/>
+                </xpath>
+            </field>
+        </record>
+
+      #ampliamos el form de partner para recoger el campo de section_id para mostrar el equipo de ventas
+      <record id="sale_order_team_view_partner" model="ir.ui.view">
+            <field name="name">sale.order.team.view.partner</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+              <xpath expr="//page[@name='sales_purchases']/group/group/field[@name='user_id']" position="after">
+                <field name="section_id"/>
+              </xpath>
+            </field>
+        </record>
+
+  </data>
+</openerp>

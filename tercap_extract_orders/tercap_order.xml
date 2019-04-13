@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<openerp>
+<data> 
+
+    
+    <record id="generate_leer_view_tercapsat" model="ir.ui.view">
+      <field name="name">Leer Pedidos de TercapSAT</field>
+      <field name="model">tercap.order</field>
+      <field name="arch" type="xml">
+      <form string="Leer Pedidos de TercapSAT" create="false" delete="false" edit="false">
+            <button name="extraer_order_api_tercap" string="Leer Pedidos" type="object" class="oe_highlight"/>
+            <button special="cancel" string="Descartar" type="object"/>
+      </form>
+      </field>
+    </record>
+
+
+
+    <record id="tercapsat_leer_control" model="ir.actions.act_window">
+      <field name="name">Leer Pedidos de TercapSAT </field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">tercap.order</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">form</field>
+      <field name="target">new</field>
+    </record>
+
+   
+    
+    <menuitem 
+        id="tercapsat_import"
+        name="TercapSAT Import"
+        parent="base.menu_base_partner" 
+        sequence="10"/>
+    
+ 
+    <menuitem 
+        id="tercapsat_importar" 
+        name="Leer de TERCAP-SAT" 
+        parent="tercapsat_import"
+        action="tercapsat_leer_control"
+        sequence="10" 
+        />
+
+    
+</data>
+</openerp>
+
+    

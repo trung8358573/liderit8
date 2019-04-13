@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>     
+  <!--=========================================  registros de ferias =================-->  
+	<record model="ir.ui.view" id="grupo_tridente_event_registration_ferias_tree">
+            <field name="name">tridente_registros_ferias_tree</field>
+            <field name="model">event.registration</field>
+            <field name="priority">90</field>
+            <field name="arch" type="xml">
+                <tree string="Registration" fonts="bold:message_unread==True">
+                  <!--   <field name="create_date"/> -->
+                  <!--   <field name="partner_id"/> -->
+                    <field name="name"/>
+                    <field name="email"/>
+                    <field name="event_id" />
+                    <field name="nb_register"/>
+                    <field name="user_id" invisible="1"/>
+                    <field name="origin"/>
+                    <field name="state"/>
+                    <field name="message_unread" invisible="1"/>
+                    <button name="registration_open" string="Confirm Registration" states="draft" type="object" icon="gtk-apply"/>
+                    <button name="button_reg_close" string="Attended the Event" states="open" type="object" icon="gtk-jump-to"/>
+                    <button name="button_reg_cancel" string="Cancel Registration" states="draft,open" type="object" icon="gtk-cancel"/>
+                </tree>
+            </field>
+      </record>
+    </data>
+</openerp>

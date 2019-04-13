@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_export_control,control_export_terca,model_export_control,base.group_sale_salesman,1,1,1,1
+access_import_control,control_import_terca,model_import_control,base.group_sale_salesman,1,1,1,1
+access_ruta_control,control_ruta_terca,model_ruta,base.group_sale_salesman,1,1,1,1
+access_route_control,control_tercap_route,model_tercap_route,base.group_sale_salesman,1,1,1,1
+access_files_control,control_tercap_files,model_tercap_files,base.group_sale_salesman,1,1,1,1
+access_envase_control,control_tercap_envase,model_codi_envase,base.group_sale_salesman,1,1,1,1
+access_implines_control,control_tercap_implines,model_tercap_import_lines,base.group_sale_salesman,1,1,1,1
+access_impdoc_control,control_tercap_impdoc,model_tercap_import_document,base.group_sale_salesman,1,1,1,1
+access_imppaym_control,control_tercap_imppaym,model_tercap_import_payments,base.group_sale_salesman,1,1,1,1
+access_impcust_control,control_tercap_impcust,model_tercap_import_customers,base.group_sale_salesman,1,1,1,1
+access_invoice_sale_rel_control,control_invoice_sale_rel,model_invoice_sale_rel,base.group_sale_salesman,1,1,1,1

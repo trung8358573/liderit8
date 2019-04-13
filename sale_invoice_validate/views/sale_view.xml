@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_sale_order_make_validate_invoice" model="ir.ui.view">
+            <field name="name">Facturar y Validar</field>
+            <field name="model">sale.make.invoice</field>
+            <field name="inherit_id" ref="sale.view_sale_order_make_invoice" />
+            <field name="arch" type="xml">
+                <xpath expr="//form/footer/button[@name='make_invoices']" position="after">
+                    <button name="make_validate_invoices" string="Facturar y Validar" type="object" class="oe_highlight"/>
+                    o
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

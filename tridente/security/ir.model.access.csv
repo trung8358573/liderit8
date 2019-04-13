@@ -1,0 +1,6 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_tridente_tr_parameters,access_tridente_tr_parameters,tridente.model_tr_parameters,base.group_user,1,1,1,1
+access_tridente_tr_sector,access_tridente_tr_sector,tridente.model_tr_sector,base.group_user,1,1,1,1
+access_tridente_tr_ferias_abc,access_tridente_tr_ferias_abc,tridente.model_tr_ferias_abc,base.group_user,1,1,1,1
+access_tridente_tr_ferias,access_tridente_tr_ferias,tridente.model_tr_ferias,base.group_user,1,1,1,1
+access_tridente_tr_product_crm,access_tridente_tr_product_crm,tridente.model_tr_product_crm,base.group_user,1,1,1,1

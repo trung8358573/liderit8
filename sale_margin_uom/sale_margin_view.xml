@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <record model="ir.ui.view" id="sale_margin_sale_order">
+        <field name="name">sale.order.margin.view.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='sale_total']" position="after">
+                <group name="sale_margin_grp">
+                    <field name="margin" widget='monetary' options="{'currency_field': 'currency_id'}" groups="base.group_sale_manager"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="sale_margin_sale_order_line">
+        <field name="name">sale.order.line.margin.view.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/form//field[@name='price_unit']" position="after">
+                <field name="purchase_price" groups="base.group_sale_manager"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="sale_margin_sale_order_line_form">
+        <field name="name">sale.order.line.tree.margin.view.form</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+           <xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']" position="after">
+                <field name="purchase_price" groups="base.group_sale_manager"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    #cambiamos tambien el grupo que puede ver el campo standard_price
+    <record model="ir.ui.view" id="product_standard_price_invisible_form">
+        <field name="name">product.standard.price.invisible.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+           <xpath expr="//page[@string='Procurements']" position="attributes">
+                <attribute name="groups">product.group_purchase_pricelist</attribute>
+            </xpath>
+        </field>
+    </record>
+
+</data>
+</openerp>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+
+        <record id="view_pricelist_bycustomer_search" model="ir.ui.view">
+            <field name="name">pricelist.by.customer.search</field>
+            <field name="model">pricelist.by.customer</field>
+            <field name="arch" type="xml">
+                <search string="Tarifas Especiales">
+                    <field name="tarifa" string="Nombre de la tarifa"/>
+                    <field name="producto" string="Producto"/>
+                    <field name="codigo" string="Codigo"/>
+                    <field name="date_end" string="Hasta Fecha" filter_domain="[('date_end','&lt;=',self)]"/>
+                    <field name="date_start" string="Desde Fecha" filter_domain="[('date_start','&gt;=',self)]"/>
+                    <group expand='1' string='Group by...'>
+                       <filter string='Nombre de la tarifa' name='tarifa' icon="terp-stock_symbol-selection" 
+                            domain="[]" context="{'group_by' : 'tarifa'}" />
+                       <filter string='Producto' name='product' icon="terp-stock_symbol-selection" domain="[]" 
+                            context="{'group_by' : 'producto'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_pricelist_bycustomer_tree1" model="ir.ui.view">
+            <field name="name">view.pricelist.bycustomer.tree1</field>
+            <field name="model">pricelist.by.customer</field>
+            <field name="priority">90</field>
+            <field name="arch" type="xml">
+                <tree string="Tarifas Especiales" editable="top">
+                    <field name="tarifa"/>
+                    <field name="codigo"/>
+                    <field name="producto"/>
+                    <field name="precio_lista"/>
+                    <field name="descuento"/>
+                    <field name="precio_neto"/>
+                    <field name="precio_especial"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_pricelist_bycustomer_form1" model="ir.ui.view">
+            <field name="name">view.pricelist.bycustomer.form1</field>
+            <field name="model">pricelist.by.customer</field>
+            <field name="arch" type="xml">
+                <form string="Tarifa especial">
+                    <group>
+                        <field name="codigo"/>
+                        <field name="producto"/>
+                    </group>
+                    <group>
+                        <field name="tarifa"/>
+                        <field name="precio_lista"/>
+                        <field name="descuento"/>
+                        <field name="precio_neto"/>
+                        <field name="precio_especial"/>
+                        <field name="date_start"/>
+                        <field name="date_end"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_pricelist_bycustomer_info" model="ir.actions.act_window">
+            <field name="name">Tarifas Especiales</field>
+            <field name="res_model">pricelist.by.customer</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_pricelist_bycustomer_tree1"/>
+            <field name="search_view_id" ref="view_pricelist_bycustomer_search"/>
+        </record>
+
+        <menuitem 
+          id="menu_especiales"              
+          name="Tarifas Especiales"
+          parent="base.menu_base_partner"
+          sequence="6"/>
+
+          <menuitem 
+          id="sub_menu_especiales" 
+          name="Ver Descuentos" 
+          parent="menu_especiales" 
+          action="action_pricelist_bycustomer_info"
+          sequence="2"/>
+
+    </data>
+</openerp>

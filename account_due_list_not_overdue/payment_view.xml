@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_payments_not_overdue_filter" model="ir.ui.view">
+            <field name="name">Payments Not Overdue Select</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account_due_list.view_payments_filter"/>
+            <field name="arch" type="xml">
+                <search string="Search Payments" position="inside">
+                    <filter icon="terp-go-today" string="No vencido" domain="[('date_maturity','&gt;=',time.strftime('%Y-%m-%d'))]"  name="not_overdue"/>
+                </search>
+            </field>
+        </record>
+
+    </data>
+</openerp>

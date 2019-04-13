@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	<!--=========================================================================== Vista form ======================================================================================= -->
+	 	<record model="ir.ui.view" id="tercap_conf_import_form_view">
+            <field name="name">tercap.conf_import.form</field>
+            <field name="model">import.control</field>
+            <field name="type">form</field>
+            <field name="priority" eval="80"/>
+            <field name="arch" type="xml">
+                <form string="configuracion Importaciones">
+                	<group col="4" colspan="4" >
+					<field name="cabecera_81"/>	
+					<field name="lineas_82"/>
+					<field name="cobros_83"/>
+					<field name="cliente_nuevo_84"/>				
+			</group> 
+	            </form>
+            </field>
+        </record>
+		<!--=========================================================================== Vista tree ======================================================================================= -->
+		<record model="ir.ui.view" id="tercap_conf_import_tree_view">
+            <field name="name">tercap.conf_import.lista</field>
+            <field name="model">import.control</field>
+            <field name="type">tree</field>
+             <field name="priority" eval="80"/>
+            <field name="arch" type="xml">
+                <tree toolbar="1"  string="configuracion importaciones">
+                	<field name="cabecera_81"/>	
+					<field name="lineas_82"/>
+					<field name="cobros_83"/>
+					<field name="cliente_nuevo_84"/>	
+                </tree>
+            </field>
+        </record>  
+		<!--=========================================================================== Acciones======================================================================================= -->
+        <record model="ir.actions.act_window" id="tercap_action_conf_import">
+            <field name="name">configuracion Importaciones</field>
+            <field name="res_model">import.control</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="tercap_conf_import_form_view"/>
+        </record>  
+	</data>
+</openerp>

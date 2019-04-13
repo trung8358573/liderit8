@@ -1,0 +1,249 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* liderit_daily_stock_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-14 11:14+0000\n"
+"PO-Revision-Date: 2018-05-14 13:24+0200\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es_ES \n"
+"X-Generator: Poedit 1.8.7.1\n"
+
+#. module: liderit_daily_stock_report
+#: field:daily.stock.report,action:0
+msgid "Action"
+msgstr "Acción"
+
+#. module: liderit_daily_stock_report
+#: view:daily.stock.report:liderit_daily_stock_report
+#: .daily_stock_report_form_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: liderit_daily_stock_report
+#: view:daily.stock.report:liderit_daily_stock_report
+#: .daily_stock_report_form_view field:daily.stock.report,category_ids:0
+#: field:product.category.ext,category_id:0
+msgid "Category"
+msgstr "Categoria"
+
+#. module: liderit_daily_stock_report
+#: view:daily.stock.report:liderit_daily_stock_report
+#: .daily_stock_report_form_view
+msgid "Close"
+msgstr "Cerrar"
+
+#. module: liderit_daily_stock_report
+#: selection:daily.stock.report,action:0
+msgid "Combined"
+msgstr "Combinado"
+
+#. module: liderit_daily_stock_report
+#: field:daily.stock.report,create_uid:0
+#: field:product.category.ext,create_uid:0 field:product.stock.ext,create_uid:0
+#: field:stock.location.ext,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: liderit_daily_stock_report
+#: field:daily.stock.report,create_date:0
+#: field:product.category.ext,create_date:0
+#: field:product.stock.ext,create_date:0 field:stock.location.ext,create_date:0
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: liderit_daily_stock_report
+#: view:daily.stock.report:liderit_daily_stock_report
+#: .daily_stock_report_form_view
+#: model:ir.actions.act_window,name:liderit_daily_stock_report
+#: .action_daily_stock_report model:ir.ui.menu,name:liderit_daily_stock_report
+#: .menu_daily_stock_report
+msgid "Daily Stock Report"
+msgstr "Informe Diario de Stock"
+
+#. module: liderit_daily_stock_report
+#: field:daily.stock.report,display_name:0
+#: field:product.category.ext,display_name:0
+#: field:product.stock.ext,display_name:0
+#: field:stock.location.ext,display_name:0
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: liderit_daily_stock_report
+#: field:daily.stock.report,report_date:0
+msgid "End Date"
+msgstr "Fecha Fin"
+
+#. module: liderit_daily_stock_report
+#: view:daily.stock.report:liderit_daily_stock_report
+#: .daily_stock_report_form_view
+msgid "Export"
+msgstr "Exportar"
+
+#. module: liderit_daily_stock_report
+#: view:daily.stock.report:liderit_daily_stock_report
+#: .daily_stock_report_form_view
+msgid "Export Complete"
+msgstr "Exportación Completada"
+
+#. module: liderit_daily_stock_report
+#: view:daily.stock.report:liderit_daily_stock_report
+#: .daily_stock_report_form_view
+msgid "Export Settings"
+msgstr "Opciones de Exportación"
+
+#. module: liderit_daily_stock_report
+#: field:daily.stock.report,data:0
+msgid "File"
+msgstr "Fichero"
+
+#. module: liderit_daily_stock_report
+#: field:daily.stock.report,name:0
+msgid "File Name"
+msgstr "Nombre de Fichero"
+
+#. module: liderit_daily_stock_report
+#: view:daily.stock.report:liderit_daily_stock_report
+#: .daily_stock_report_form_view
+msgid "Filters"
+msgstr "Filtros"
+
+#. module: liderit_daily_stock_report
+#: view:daily.stock.report:liderit_daily_stock_report
+#: .daily_stock_report_form_view
+msgid "Here is the daily stock report:"
+msgstr "Pulse sobre el nombre para descargar el informe diario:"
+
+#. module: liderit_daily_stock_report
+#: field:daily.stock.report,id:0 field:product.category.ext,id:0
+#: field:product.stock.ext,id:0 field:stock.location.ext,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: liderit_daily_stock_report
+#: field:daily.stock.report,show_incoming:0
+msgid "Incoming"
+msgstr "Entrante"
+
+#. module: liderit_daily_stock_report
+#: selection:daily.stock.report,action:0
+msgid "Individual"
+msgstr "Individual"
+
+#. module: liderit_daily_stock_report
+#: field:daily.stock.report,__last_update:0
+#: field:product.category.ext,__last_update:0
+#: field:product.stock.ext,__last_update:0
+#: field:stock.location.ext,__last_update:0
+msgid "Last Modified on"
+msgstr "Ultima modificación"
+
+#. module: liderit_daily_stock_report
+#: field:daily.stock.report,write_uid:0 field:product.category.ext,write_uid:0
+#: field:product.stock.ext,write_uid:0 field:stock.location.ext,write_uid:0
+msgid "Last Updated by"
+msgstr "Actualizado por"
+
+#. module: liderit_daily_stock_report
+#: field:daily.stock.report,write_date:0
+#: field:product.category.ext,write_date:0 field:product.stock.ext,write_date:0
+#: field:stock.location.ext,write_date:0
+msgid "Last Updated on"
+msgstr "Ultima actualización"
+
+#. module: liderit_daily_stock_report
+#: view:daily.stock.report:liderit_daily_stock_report
+#: .daily_stock_report_form_view
+msgid "Layout Options"
+msgstr "Opciones de distribución"
+
+#. module: liderit_daily_stock_report
+#: view:daily.stock.report:liderit_daily_stock_report
+#: .daily_stock_report_form_view field:daily.stock.report,location_ids:0
+#: field:stock.location.ext,location_id:0
+msgid "Location"
+msgstr "Localización"
+
+#. module: liderit_daily_stock_report
+#: field:daily.stock.report,show_opening:0
+msgid "Opening"
+msgstr "Inicial"
+
+#. module: liderit_daily_stock_report
+#: field:daily.stock.report,show_outgoing:0
+msgid "Outgoing"
+msgstr "Final"
+
+#. module: liderit_daily_stock_report
+#: code:addons/liderit_daily_stock_report /wizard/daily_stock_report.py:47
+#, python-format
+msgid "Please select Location"
+msgstr "Por favor seleccione Ubicación"
+
+#. module: liderit_daily_stock_report
+#: field:product.stock.ext,product_id:0
+msgid "Product"
+msgstr "Producto"
+
+#. module: liderit_daily_stock_report
+#: view:daily.stock.report:liderit_daily_stock_report
+#: .daily_stock_report_form_view field:daily.stock.report,product_ids:0
+msgid "Products"
+msgstr "Productos"
+
+#. module: liderit_daily_stock_report
+#: field:daily.stock.report,report_date_start:0
+msgid "Start Date"
+msgstr "Fecha Inicial"
+
+#. module: liderit_daily_stock_report
+#: field:product.category.ext,report_category_id:0
+#: field:product.stock.ext,report_product_id:0
+#: field:stock.location.ext,report_location_id:0
+msgid "Stock Report"
+msgstr "Informe de Stock "
+
+#. module: liderit_daily_stock_report
+#: field:daily.stock.report,show_valuation:0
+msgid "Valuation"
+msgstr "Valoración"
+
+#. module: liderit_daily_stock_report
+#: code:addons/liderit_daily_stock_report /wizard/daily_stock_report.py:47
+#, python-format
+msgid "Warning"
+msgstr "Peligro"
+
+#. module: liderit_daily_stock_report
+#: field:daily.stock.report,weight_uom_id:0
+msgid "Weight UoM"
+msgstr "Peso de UdM"
+
+#. module: liderit_daily_stock_report
+#: selection:daily.stock.report,state:0
+msgid "choose"
+msgstr "Selecciónar"
+
+#. module: liderit_daily_stock_report
+#: selection:daily.stock.report,state:0
+msgid "get"
+msgstr "coger"
+
+#. module: liderit_daily_stock_report
+#: view:daily.stock.report:liderit_daily_stock_report
+#: .daily_stock_report_form_view
+msgid "or"
+msgstr "o"
+
+#. module: liderit_daily_stock_report
+#: field:daily.stock.report,state:0
+msgid "unknown"
+msgstr "Desconocido"

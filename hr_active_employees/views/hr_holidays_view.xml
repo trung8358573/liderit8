@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="grupo_tridente_hr_holidays_active" model="ir.ui.view">
+            <field name="name">grupo_tridente_hr_holidays_active</field>
+            <field name="model">hr.holidays</field>
+            <field name="type">tree</field> 
+            <field name="inherit_id" ref="hr_holidays.view_hr_holidays_filter"/>
+            <field name="arch" type="xml">
+                <search string="Search Leave" position="inside">
+                    <filter name="active_employees" string="Active Employees" domain="[('active_employee', '!=', False)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="hr_holidays.open_company_allocation" model="ir.actions.act_window"> 
+           <field name="context">{'search_default_group_type': 1, 'search_default_active_employees':1}</field>
+        </record>
+
+    </data>
+</openerp>

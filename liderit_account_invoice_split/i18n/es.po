@@ -1,0 +1,87 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* liderit_account_invoice_split
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-28 13:29+0000\n"
+"PO-Revision-Date: 2018-11-28 14:31+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 1.6.10\n"
+
+#. module: liderit_account_invoice_split
+#: view:account.invoice.split:liderit_account_invoice_split.liderit_account_invoice_split_view_form
+msgid "Amount without taxes to split invoice"
+msgstr "Importe sin impuestos para dividir la factura"
+
+#. module: liderit_account_invoice_split
+#: code:addons/liderit_account_invoice_split/models/account_invoice.py:28
+#, python-format
+msgid "At least two invoice lines required for a split"
+msgstr "Se necesitan al menos dos líneas para dividir una factura"
+
+#. module: liderit_account_invoice_split
+#: code:addons/liderit_account_invoice_split/wizard/account_invoice_split.py:68
+#, python-format
+msgid "Can't split invoice. No invoice line with subtotal minor than amount."
+msgstr ""
+"No se puede dividir la factura. Ninguna línea tiene un importe menor que la "
+"cantidad a dividir."
+
+#. module: liderit_account_invoice_split
+#: code:addons/liderit_account_invoice_split/wizard/account_invoice_split.py:100
+#, python-format
+msgid "Invoices"
+msgstr "Facturas"
+
+#. module: liderit_account_invoice_split
+#: code:addons/liderit_account_invoice_split/models/account_invoice.py:24
+#, python-format
+msgid "Only draft invoices can be splitted"
+msgstr "Sólo se pueden dividir facturas en Borrador"
+
+#. module: liderit_account_invoice_split
+#: field:account.invoice.split,reset_taxes:0
+msgid "Reset taxes"
+msgstr "Recalcular impuestos"
+
+#. module: liderit_account_invoice_split
+#: code:addons/liderit_account_invoice_split/models/account_invoice.py:36
+#, python-format
+msgid "Select Invoice Lines"
+msgstr "Elegir Líneas de Factura"
+
+#. module: liderit_account_invoice_split
+#: model:ir.model,name:liderit_account_invoice_split.model_account_invoice_split
+msgid "Split Invoice"
+msgstr "Dividir Factura"
+
+#. module: liderit_account_invoice_split
+#: field:account.invoice.split,split_journal:0
+msgid "Split journal"
+msgstr "Dividir Diario"
+
+#. module: liderit_account_invoice_split
+#: code:addons/liderit_account_invoice_split/wizard/account_invoice_split.py:77
+#, python-format
+msgid "The amount of the resulting invoices must be > 0."
+msgstr "El importe de las nuevas facturas debe ser positivo."
+
+#. module: liderit_account_invoice_split
+#: field:account.invoice.split,split_amount:0
+msgid "Total amount to Split without taxes"
+msgstr "Total a dividir sin impuestos"
+
+#. module: liderit_account_invoice_split
+#: code:addons/liderit_account_invoice_split/wizard/account_invoice_split.py:40
+#, python-format
+msgid "You have to set a sale journal."
+msgstr "Tiene que seleccionar un diario de facturación."

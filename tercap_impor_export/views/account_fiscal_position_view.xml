@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="tercap_account_fiscal_position_form_view">
+            <field name="name">account_fiscal_position_tercap_form</field>
+            <field name="model">account.fiscal.position</field>
+            <field name="inherit_id" ref="account.view_account_position_form" />
+            <field name="arch" type="xml">
+             	<xpath expr="//field[@name='active']" position="before">
+					<field name="tercap_tipo_iva" />
+				</xpath>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="tercap_account_fiscal_position_tree_view">
+            <field name="name">account_fiscal_position_tercap_tree</field>
+            <field name="model">account.fiscal.position</field>
+            <field name="inherit_id" ref="account.view_account_position_tree" />
+            <field name="arch" type="xml">
+             	<xpath expr="//field[@name='name']" position="after">
+					<field name="tercap_tipo_iva" />
+				</xpath>
+            </field>
+        </record>
+        <!-- permite agrupar por mes las facturas a imprimir-->
+        <record model="ir.ui.view" id="tercap_account_date_invoice_search_view">
+            <field name="name">tercap.account.date.invoice.search.view</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter" />
+            <field name="arch" type="xml">
+                <xpath expr="//search/group" position="inside">
+                    <filter string="Mes Factura" context="{'group_by':'date_invoice'}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

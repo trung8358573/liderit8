@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>        
+	  <menuitem
+			name="Migracion Tridente" 
+           	parent="base.menu_config"
+            action="migracion_action_parameters"
+            id="menu_tr_parameters"
+            sequence="30"/>           
+	</data>
+</openerp>

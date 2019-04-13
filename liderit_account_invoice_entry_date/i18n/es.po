@@ -1,0 +1,46 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_invoice_entry_date
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-15 12:57+0000\n"
+"PO-Revision-Date: 2017-03-15 14:01+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 1.6.10\n"
+
+#. module: account_invoice_entry_date
+#: code:addons/account_invoice_entry_date/models/account.py:84
+#, python-format
+msgid "Can't find a non special period for %s - %s (%s)"
+msgstr "No hay periodo definido para %s - %s (%s)"
+
+#. module: account_invoice_entry_date
+#: model:ir.model,name:account_invoice_entry_date.model_account_invoice
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: account_invoice_entry_date
+#: help:account.invoice,registration_date:0
+msgid "Keep empty to use the current date"
+msgstr "Dejar en blanco para utilizar la fecha actual"
+
+#. module: account_invoice_entry_date
+#: field:account.invoice,registration_date:0
+msgid "Registration Date"
+msgstr "Fecha de registro"
+
+#. module: account_invoice_entry_date
+#: code:addons/account_invoice_entry_date/models/account.py:64
+#, python-format
+msgid "The invoice date cannot be later than the date of registration!"
+msgstr ""
+"La fecha de factura no puede ser mayor que la fecha de contabilización!"

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>        
+<!--=========================================  res.partner  inherit  / conexion tercap===============================================================================-->
+       <record id="tercap_view_partner_form" model="ir.ui.view">
+            <field name="name">tercap.res.partner.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml"> 
+               <notebook colspan="4" position="inside" >
+                    <page string="Conexion Tercap" groups="tercap_impor_export.group_tercap_manager">
+                        <group>
+                      <!--       <field name="tercap_tipo_iva"/> -->
+                      <!--       <field name="tercap_cod_forma_pago"/> -->
+                            
+                            <field name="factura_en_dir"/>
+                            <field name="tercap_codexclusividad"/>
+                            <field name="tercap_descuentogeneral"/>
+                            <field name="tercap_descuentopp"/>
+                            <field name="tercap_solicitarnumpedido"/>
+                            <field name="tercap_albarancontado"/>
+                            <field name="tercap_albaranvalorado"/>
+             				        <field name="tercap_tipoventa"/>
+             				        <field name="tercap_permitirdevoluciones"/>
+             				        <field name="tercap_imprimircopiaalb"/>
+                        </group>
+                    </page>
+               </notebook> 
+              <xpath expr="//page[@name='sales_purchases']/group/group/field[@name='user_id']" position="after">
+                    <field name='tercap_ruta_id' />
+                    <!--19-4-16 incluido nuevo campo para orden de visita en la ruta-->
+                    <field name='orden_visita' />
+              </xpath>
+              <!--28-6-16 nuevo campo para la ruta de reparto-->
+              <xpath expr="//page[@name='sales_purchases']/group/group/field[@name='supplier']" position="after">
+                    <field name='tercap_reparto_id' />
+                    <!--14-07-16 nuevo campo para el dia de descanso -->
+                    <field name='dia_descanso' placeholder='Usar MAYÚSCULAS para registrar el día de descanso'/>
+              </xpath>
+            </field>
+       </record>
+ <!--=========================================  res.partner  inherit  / busqueda  tercap===============================================================================-->      
+       <record model="ir.ui.view" id="tercap_rutas_search_view">
+            <field name="name">tercap_customer_rutas_search_view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <group string="Group By" position="inside">
+                    <filter string="Rutas" context="{'group_by':'tercap_ruta_id'}"/>               
+                </group>
+            </field>
+        </record>
+
+
+<!--14-07-16=======================================  STOCK  inherit  / conexion tercap===============================================================================-->
+       <record id="tercap_stock_vpicktree_form" model="ir.ui.view">
+            <field name="name">tercap.stock.vpicktree.form.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.vpicktree"/>
+            <field name="arch" type="xml"> 
+              <xpath expr="field[@name='origin']" position="after">
+                    <field name='dia_descanso' />
+              </xpath>
+
+            </field>
+       </record>
+
+<!--=========================================  stock.picking group by ruta============================================-->
+      <record model="ir.ui.view" id="tercap_stockrutas_search_view">
+            <field name="name">tercap_stock_rutas_search_view</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+            <field name="arch" type="xml">
+                <group string="Group By" position="inside">
+                    <filter string="Rutas" context="{'group_by':'ruta_id'}"/>
+                    <filter string="Repartos" context="{'group_by':'reparto_id'}"/>
+                    <filter string="Equipo de ventas" context="{'group_by':'section_id'}"/>               
+                </group>
+            </field>
+      </record>
+
+<!--======================================== sale.order group ruta and filter contados===========================================-->
+       <record model="ir.ui.view" id="tercap_salerutas_search_view">
+            <field name="name">tercap_sale_rutas_search_view</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+              <group string="Group By" position="inside">
+                    <filter string="Rutas" context="{'group_by':'ruta_id'}"/>               
+              </group>
+              <xpath expr="//filter[@string='To Invoice']" position="after">
+                <filter string="Contados" domain="[('payment_mode_id.tercap_cod_modo_pago','=',1)]" help="Pedidos para cobrar a la entrega"/>
+                <filter string="A credito" domain="[('payment_mode_id.tercap_cod_modo_pago','!=',1)]" help="Pedidos para cobrar por giro"/>
+              </xpath>
+            </field>
+      </record>
+
+<!--======================================== sale.order tree modo pago===========================================-->
+       <record model="ir.ui.view" id="tercap_modopago_saletree_view">
+            <field name="name">tercap_modopago_saletree_view</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+              <xpath expr="//field[@name='state']" position="after">
+                <field name="payment_mode_id"/>
+              </xpath>
+            </field>
+      </record>
+
+    </data>
+</openerp>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	<!--=========================================================================== Vista form ======================================================================================= -->
+	 	<record model="ir.ui.view" id="tridente_productos_crm_form_view">
+            <field name="name">tridente_productos_crm_form</field>
+            <field name="model">tr.product_crm</field>
+            <field name="type">form</field>       
+            <field name="arch" type="xml">
+                <form string="product_crm">
+                	<group>
+						<field name="p_descripcion"/>
+                   	</group> 	
+	            </form>
+            </field>
+        </record>
+		<!--=========================================================================== Vista tree ======================================================================================= -->
+		<record model="ir.ui.view" id="tridente_productos_crm_tree_view">
+            <field name="name">tridente_productos_crm_lista</field>
+            <field name="model">tr.product_crm</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree toolbar="1"  string="Poducts_crm">
+        			<field name="p_descripcion"/>
+                </tree>
+            </field>
+        </record>  
+        <!--=========================================================================== Busqueda hoteles ============================================================================ -->
+  		<record id="tridente_productos_crm_search" model="ir.ui.view">
+        	<field name="name">tridente_productos_crm_search</field>
+        	<field name="model">tr.product_crm</field>
+        	<field name="arch" type="xml">
+            <search string="Poducts_crm search">
+                    <group expand="0" string="Group By">
+              
+             		</group>
+                </search>
+            </field>
+        </record>
+		<!--=========================================================================== Acciones======================================================================================= -->
+        <record model="ir.actions.act_window" id="productos_crm_action">
+            <field name="name">Poducts_crm</field>
+            <field name="res_model">tr.product_crm</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="tridente_productos_crm_search"/>
+        </record>  
+	</data>
+</openerp>

@@ -1,0 +1,20 @@
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="dias_festivos_form_view">
+            <field name="name">dias.festivos.inh.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Dias de vacaciones" >
+                        <field name ="holiday_ids">
+                            <tree string="Dias de vacaciones" editable="bottom">
+                                <field name ="name"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</openerp>

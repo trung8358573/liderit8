@@ -1,0 +1,34 @@
+<openerp>
+    <data>
+        <record id="view_res_partner_filter" model="ir.ui.view">
+            <field name="name">view.res.partner.filter.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="ref"/>
+                </field>
+            </field>
+        </record>
+
+
+        <record id="partner_sequence_view_partner_form" model="ir.ui.view">
+            <field name="name">partner.sequence.view.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+
+                <xpath expr="//notebook/page[@name='sales_purchases']/group/group/field[@name='ref']" position="replace">
+                </xpath>
+
+                <xpath expr="//field[@name='category_id']" position="after">
+                    <group>
+                        <field name="ref"/>
+                    </group>
+                </xpath>
+
+            </field>
+        </record>
+
+    </data>
+</openerp>

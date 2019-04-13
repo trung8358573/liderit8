@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+
+#filtros para permitir buscar registros en eventos entre fechas previstas segun nuevos campos funcion
+        <record id="hr_timesheet_fromtodate_filter" model="ir.ui.view">
+            <field name="name">hr.timesheet.fromtodate.search</field>
+            <field name="model">hr.analytic.timesheet</field>
+            <field name="inherit_id" ref="hr_timesheet.hr_timesheet_line_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <field name="due_date_to" string="Hasta Dia Previsto" filter_domain="[('date','&lt;=',self)]"/>
+                    <field name="due_date_from" string="Desde Dia Previsto" filter_domain="[('date','&gt;=',self)]"/>
+                </xpath>
+            </field>
+        </record>
+
+
+
+  </data>
+</openerp>

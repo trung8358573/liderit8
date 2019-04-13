@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp> 
+	<data noupdate="1">
+ 		<record id="tridente_parm_gene" model="tr.parameters">
+          	<field name="par_name">pa00</field>
+      	</record>
+    </data>  
+	<data noupdate="0">
+  <!-- ============================================================================================================ -->       	
+      <!-- 	<record id="crm_sector_1" model="tr.sector">
+          	<field name="s_descripcion">Administraciones Publicas y Organismos</field>
+      	</record>
+      	<record id="crm_sector_2" model="tr.sector">
+          	<field name="s_descripcion">Asociaciones y organizaciones</field>
+      	</record>
+      	<record id="crm_sector_3" model="tr.sector">
+          	<field name="s_descripcion">Colegios Profesionales y Camaras</field>
+      	</record>
+      	<record id="crm_sector_4" model="tr.sector">
+          	<field name="s_descripcion">Comercios y tiendas</field>
+      	</record>
+      	<record id="crm_sector_5" model="tr.sector">
+          	<field name="s_descripcion">Contact Center</field>
+      	</record>
+      	<record id="crm_sector_6" model="tr.sector">
+          	<field name="s_descripcion">Educacion</field>
+      	</record>
+      	<record id="crm_sector_7" model="tr.sector">
+          	<field name="s_descripcion">Energia</field>
+      	</record>
+      	<record id="crm_sector_8" model="tr.sector">
+          	<field name="s_descripcion">Financiero y de Seguros</field>
+      	</record>
+      	<record id="crm_sector_9" model="tr.sector">
+          	<field name="s_descripcion">Gestion Medio ambiental y reciclado</field>
+      	</record>
+      	<record id="crm_sector_10" model="tr.sector">
+          	<field name="s_descripcion">Iluminados</field>
+      	</record>
+      	<record id="crm_sector_11" model="tr.sector">
+          	<field name="s_descripcion">Industria Manufacturera</field>
+      	</record>
+      	<record id="crm_sector_12" model="tr.sector">
+          	<field name="s_descripcion">Inmobiliario / Construccion</field>
+      	</record>
+      	<record id="crm_sector_13" model="tr.sector">
+          	<field name="s_descripcion">Investigacion y Desarrollo</field>
+      	</record>
+      	<record id="crm_sector_14" model="tr.sector">
+          	<field name="s_descripcion">Marketing y publicidad</field>
+      	</record>
+      	<record id="crm_sector_15" model="tr.sector">
+          	<field name="s_descripcion">Medios de comunicacion</field>
+      	</record>
+      	<record id="crm_sector_16" model="tr.sector">
+          	<field name="s_descripcion">Ocio y cultura</field>
+      	</record>
+      	<record id="crm_sector_17" model="tr.sector">
+          	<field name="s_descripcion">ONGs y Fundaciones</field>
+      	</record>
+      	<record id="crm_sector_18" model="tr.sector">
+          	<field name="s_descripcion">Otros</field>
+      	</record>
+      	<record id="crm_sector_19" model="tr.sector">
+          	<field name="s_descripcion">Sanitario y de Servicios Sociales</field>
+      	</record>
+      	<record id="crm_sector_20" model="tr.sector">
+          	<field name="s_descripcion">Servicios para Empresas</field>
+      	</record>
+      	<record id="crm_sector_21" model="tr.sector">
+          	<field name="s_descripcion">TIC - Comercio electronico - Internet - HW</field>
+      	</record>
+      	<record id="crm_sector_22" model="tr.sector">
+          	<field name="s_descripcion">TIC - Comunicaciones</field>
+      	</record>
+      	<record id="crm_sector_23" model="tr.sector">
+          	<field name="s_descripcion">TIC - Desarrollo aplicaciones</field>
+      	</record>
+      	<record id="crm_sector_24" model="tr.sector">
+          	<field name="s_descripcion">TIC - SW gestion</field>
+      	</record>
+      	<record id="crm_sector_25" model="tr.sector">
+          	<field name="s_descripcion">Transporte y Logistica</field>
+      	</record>
+      	<record id="crm_sector_26" model="tr.sector">
+          	<field name="s_descripcion">Turismo y Hosteleria</field>
+      	</record>    	 -->
+  <!-- ============================================================================================================ -->   
+  		<record id="crm_tracking_source_1" model="crm.tracking.source">
+          	<field name="name">Campaña</field>
+      	</record>
+    	<record id="crm_tracking_source_2" model="crm.tracking.source">
+          	<field name="name">Email comercial@tridente</field>
+      	</record>
+    	<record id="crm_tracking_source_3" model="crm.tracking.source">
+          	<field name="name">Email info@tridente</field>
+      	</record>
+    	<record id="crm_tracking_source_4" model="crm.tracking.source">
+          	<field name="name">Email INFOWEB</field>
+      	</record>
+    	<record id="crm_tracking_source_5" model="crm.tracking.source">
+          	<field name="name">Email sms@tridente</field>
+      	</record>
+    	<record id="crm_tracking_source_6" model="crm.tracking.source">
+          	<field name="name">Ferias y Congresos</field>
+      	</record>
+    	<record id="crm_tracking_source_7" model="crm.tracking.source">
+          	<field name="name">Llamada cliente</field>
+      	</record>
+    	<record id="crm_tracking_source_8" model="crm.tracking.source">
+          	<field name="name">Otros</field>
+      	</record>
+    	<record id="crm_tracking_source_9" model="crm.tracking.source">
+          	<field name="name">Referencia blog o red social</field>
+      	</record>
+    	<record id="crm_tracking_source_10" model="crm.tracking.source">
+          	<field name="name">Referencia empleado</field>
+      	</record>	
+    </data>
+</openerp>

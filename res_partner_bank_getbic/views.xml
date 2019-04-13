@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_bank_set_data" model="ir.ui.view">
+            <field name="name">Set Bank Data</field>
+            <field name="model">res.bank.bicdata</field>
+            <field name="arch" type="xml">
+                <form string="Set Bank Data">
+                    
+                    <footer>
+                        <button name="set_bic_code" string="Set Bank Data"
+                            type="object" class="oe_highlight" />
+                        or
+                        <button string="Cancel" class="oe_link"
+                            special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window name="Set Bank Data" res_model="res.bank.bicdata"
+            src_model="res.partner.bank" view_mode="form" target="new"
+            multi="True" key2="client_action_multi" id="action_set_bic_code" />
+
+
+    </data>
+</openerp>

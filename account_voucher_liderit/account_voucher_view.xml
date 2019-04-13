@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <!-- Only Supplier in view -->
+
+        <record model="ir.ui.view" id="view_vendor_payment_supplier_form">
+            <field name="name">account.voucher.payment.supplier.form</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.view_vendor_payment_form" />
+            <field name="arch" type="xml">
+                <field name="partner_id" position="replace">
+                    <field name="partner_id" required="1" invisible="context.get('line_type', False)" on_change="onchange_partner_id(partner_id, journal_id, amount, currency_id, type, date, context)" context="{'invoice_currency':currency_id, 'default_customer': 0, 'search_default_supplier': 1, 'default_supplier': 1}" domain="['|',('supplier','=',True),('employee','=',True)]" string="Supplier"/>
+                </field>
+                
+            </field>
+        </record>
+
+        <!--filter by employee in field partner_id-->
+        <record model="ir.ui.view" id="employee_account_voucher_search_view">
+            <field name="name">employee_account_voucher_search_view</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.view_voucher_filter_vendor_pay"/>
+            <field name="arch" type="xml">
+                <xpath expr="/search[@string='Search Vouchers']" position="inside">
+                    <filter icon="terp-document-new" string="Empleados" domain="[('partner_id.employee','=',True)]" help="Talones para trabajadores"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

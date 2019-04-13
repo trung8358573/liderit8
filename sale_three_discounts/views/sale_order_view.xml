@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+
+		<record model="ir.ui.view" id="sale_order_three_discounts_form_view_inh">
+			<field name="name">sale.order.three_discounts.form.inh</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_form" />
+			<field name="arch" type="xml">
+<!--add a global discount-->				
+				<xpath expr="//field[@name='client_order_ref']" position="after">
+                	<field name="global_discount" groups="sale.group_discount_per_so_line" on_change="onchange_global_discount(global_discount, context)"/>
+                </xpath>
+<!--set field discount invisible, not visible readonly-->
+				<xpath expr="//field[@name='order_line']//tree//field[@name='discount']" position="attributes">
+					<!--attribute name="readonly">True</attribute-->
+					<attribute name="invisible">1</attribute>
+				</xpath>
+				<xpath expr="//field[@name='order_line']//tree//field[@name='discount']" position="before">
+					<field name="discount1" groups="sale.group_discount_per_so_line"/>
+					<field name="discount2" groups="sale.group_discount_per_so_line"/>
+<!--uncoment for three discounts
+					<field name="discount3" groups="sale.group_discount_per_so_line"/>
+-->
+				</xpath>
+
+
+
+<!-- modify form view -->
+				<xpath expr="//field[@name='order_line']//form[@string='Sales Order Lines']//group//field[@name='price_unit']" position="after">
+					<label for="discount1" groups="sale.group_discount_per_so_line"/>
+                    <div name="discount1" groups="sale.group_discount_per_so_line">
+                        <field name="discount1" class="oe_inline"/> %%
+                    </div>
+                    <label for="discount2" groups="sale.group_discount_per_so_line"/>
+                    <div name="discount2" groups="sale.group_discount_per_so_line">
+                        <field name="discount2" class="oe_inline"/> %%
+                    </div>
+<!--uncoment for three discounts
+					<label for="discount3" groups="sale.group_discount_per_so_line"/>
+                    <div name="discount3" groups="sale.group_discount_per_so_line">
+                        <field name="discount3" class="oe_inline"/> %%
+                    </div>
+-->
+				</xpath>
+
+<!--set field discount invisible-->
+				<xpath expr="//field[@name='order_line']//form[@string='Sales Order Lines']//group//label[@for='discount']" position="attributes">
+					<attribute name="invisible">1</attribute>
+				</xpath>
+
+				<xpath expr="//field[@name='order_line']//form[@string='Sales Order Lines']//group//div[@name='discount']" position="attributes">
+					<attribute name="invisible">1</attribute>
+				</xpath>
+
+			</field>
+		</record>
+
+	</data>
+</openerp>

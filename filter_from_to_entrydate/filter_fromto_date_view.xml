@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+
+
+#filtros para permitir buscar facturas entre fechas de registro segun nuevos campos funcion
+        <record id="account_invoice_entrydate_filter" model="ir.ui.view">
+            <field name="name">account.invoice.entrydate.search</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <field name="due_entrydate_to" 
+                        string="Hasta F.Registro" 
+                        filter_domain="[('registration_date','&lt;=',self)]"
+                        invisible="context.get('type') in ('out_invoice','out_refund')"/>
+                    <field name="due_entrydate_from" 
+                        string="Desde F.Registro" 
+                        filter_domain="[('registration_date','&gt;=',self)]"
+                        invisible="context.get('type') in ('out_invoice','out_refund')"/>
+                </xpath>
+            </field>
+        </record>
+
+
+
+  </data>
+</openerp>

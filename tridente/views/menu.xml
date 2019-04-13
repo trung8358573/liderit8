@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>        
+	  <menuitem
+			name="Especial Parameters Tridente" 
+           	parent="base.menu_config"
+            action="tr_action_parameters"
+            id="menu_tr_parameters"
+            groups="group_tridente_admin"
+            sequence="20"/>           
+ 	  <menuitem
+ 			name="List of fairs" 
+ 			parent="base.menu_marketing_config_root"
+ 			action="ferias_action"
+ 			id="menu_tr_ferias" 
+   			sequence="20"/>  
+   	  <menuitem
+ 			name="List of crm Produts" 
+ 			parent="base.menu_marketing_config_root"
+ 			action="productos_crm_action"
+ 			id="menu_tr_crm_products" 
+   			sequence="21"/>  	
+	  <!-- groups="base.group_no_one"   -->
+	</data>
+</openerp>

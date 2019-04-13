@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data> 
+
+
+
+<!--form view de partner para mostrar fecha de alta-->
+    <record id="view_liderit_partner_alta_form" model="ir.ui.view">
+        <field name="name">liderit.partner.alta.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='title']" position="attributes">
+                  <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='title']" position="after">
+                  <field name="fecha_alta" />
+                </xpath>
+
+                <xpath expr="//field[@name='function']" position="attributes">
+                  <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='function']" position="after">
+                  <field name="website" />
+                </xpath>
+
+                <xpath expr="//field[@name='website']" position="attributes">
+                  <attribute name="invisible">1</attribute>
+                </xpath>
+                
+            </field>
+    </record>
+
+
+
+    </data>
+</openerp>

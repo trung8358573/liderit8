@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_payments_not_employee_filter" model="ir.ui.view">
+            <field name="name">Payments Not Employee Select</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account_due_list.view_payments_filter"/>
+            <field name="arch" type="xml">
+                <search string="Search Payments" position="inside">
+                    <filter name="not_employees" string="No Trabajador" domain="[('is_employee', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+
+
+
+    </data>
+</openerp>

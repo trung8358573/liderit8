@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>     
+<!--=========================================  res.partner  inherit       ===============================================================================-->
+       <record id="grupo_tridente_partner_form" model="ir.ui.view">
+            <field name="name">grupo_tridente_partner_form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">           
+				<xpath expr="//field[@name='title']" position="after">
+					<field name="tipo_prospector" attrs="{'invisible': [('prospector', '=', False)]}"/>
+				</xpath>
+				<xpath expr="//field[@name='user_id']" position="before">
+					<field name="sector_id"/>	
+					<field name="tipo_ferias_asiste"/>	
+					<field name="ferias_abc_id"/>	
+				</xpath>
+             	<xpath expr="//field[@name='active']" position="before">
+             		<field name="prospector" />
+					<field name="vendedor" />
+					<field name="disenador" />
+					<field name="montador" />
+					<field name="palacio" />				
+			   	</xpath>
+             	<notebook  position="inside">
+                	<page string="Fairs">
+				            <field name="freria_ids">            
+				            </field>
+					</page>
+               		<page string="Products">
+				            <field name="product_crm_ids">
+				            </field>
+					</page>
+               </notebook>  
+            </field>          
+       </record>
+       <record id="grupo_tridente_partner_search" model="ir.ui.view">
+	        <field name="name">>grupo_tridente_partner_search.inherit</field>
+	        <field name="model">res.partner</field>
+	        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+	        <field name="arch" type="xml">
+	         	<filter string="Suppliers" position="after">
+                    <separator/>
+  					<filter string="Salesman" name="vendedor" domain="[('vendedor', '=', True)]"/>
+                	<filter string="Disigner" name="disenador" domain="[('disenador', '=', True)]"/>
+                	<filter string="Furniture assembler" name="montador" domain="[('montador', '=', True)]"/>
+                	<filter string="Prospector" name="prospector" domain="[('prospector', '=', True)]"/>
+                	<filter string="Palaces" name="palacio" domain="[('palacio', '=', True)]"/>
+                </filter>
+
+	            <filter name="customer" position="after">
+	                <field name="email" filter_domain="['|','|',('display_name','ilike',self),('ref','=',self),('email','ilike',self)]"/>
+	                <field name="mobile" filter_domain="['|','|',('display_name','ilike',self),('ref','=',self),('mobile','ilike',self)]"/>
+	                <field name="phone" filter_domain="['|','|',('display_name','ilike',self),('ref','=',self),('phone','ilike',self)]"/>
+	            	<field name="freria_ids" string="Fairs" filter_domain="[('freria_ids','ilike', self)]"/>
+	            	<field name="product_crm_ids" string="Products CRM" filter_domain="[('product_crm_ids','ilike', self)]"/>
+	            </filter>
+	        </field>
+    	</record>      
+    	<record model="ir.ui.view" id="grupo_tridente_partner_search_2">
+            <field name="name">grupo_tridente_partner_search_2.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <group string="Group By" position="inside">
+                    <filter string="Create Date" context="{'group_by':'create_date'}"/>  
+                    <filter string="sector" context="{'group_by':'sector_id'}"/>  
+                    <filter string="Type of fairs" context="{'group_by':'tipo_ferias_asiste'}"/>
+                    <filter string="Trade fairs" context="{'group_by':'ferias_abc_id'}"/>  
+                    <filter string="Type Prospector" context="{'group_by':'tipo_prospector'}"/>                                 
+                </group>
+            </field>
+        </record>
+  <!--=========================================  action cambio en contextos de vistas clientes =================-->    
+      <record id="base.action_partner_form" model="ir.actions.act_window">         
+            <field name="context">{'search_default_customer':1 , 'search_default_type_company':1}</field>
+      </record>
+ 	  <record id="base.action_partner_customer_form" model="ir.actions.act_window">         
+            <field name="context">{'search_default_customer':1 , 'search_default_type_company':1}</field>
+      </record>
+  <!--=========================================  action cambio en contextos de vistas proveedores =================-->  
+ 	  <record id="base.action_partner_supplier_form" model="ir.actions.act_window">         
+            <field name="context">{'search_default_supplier':1 , 'search_default_type_company':1}</field>
+      </record>
+ 
+    </data>
+</openerp>
+  <!--           	<xpath expr="//div[@name='buttons']" position="inside">
+                    <button class="oe_inline oe_stat_button" 
+                    		type="object" 
+                    		name="partner_registrations" 
+                    		attrs="{'invisible': [('customer', '=', False)]}" 
+                    		icon="fa-strikethrough">    
+                    		<field string="Num.Fairs" name="reg_event_count" widget="statinfo"/>                
+                    </button> 
+                </xpath> -->
+
+
+
+

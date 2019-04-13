@@ -1,0 +1,204 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* base_reason
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-27 09:57+0000\n"
+"PO-Revision-Date: 2018-04-27 12:04+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 1.6.10\n"
+
+#. module: base_reason
+#: model:ir.actions.act_window,help:base_reason.tier_one_act
+msgid ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                Click to create Tier One reasons.\n"
+"              </p>\n"
+"            "
+msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                Click para crear razones o motivos.\n"
+"              </p>\n"
+"            "
+
+#. module: base_reason
+#: model:ir.actions.act_window,help:base_reason.tier_three_act
+msgid ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                Click to create Tier Three reasons.\n"
+"              </p>\n"
+"            "
+msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                 Click para crear razones o motivos nivel 3.\n"
+"              </p>\n"
+"            "
+
+#. module: base_reason
+#: model:ir.actions.act_window,help:base_reason.tier_two_act
+msgid ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                Click to create Tier Two reasons.\n"
+"              </p>\n"
+"            "
+msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                 Click para crear razones o motivos nivel 2.\n"
+"              </p>\n"
+"            "
+
+#. module: base_reason
+#: help:base.reason.tier.one,model_ids:0
+msgid ""
+"Can be used for specific implementation to only show reasons where you want"
+msgstr "Utilícese para mostrar los motivos específicos para este tipo de datos"
+
+#. module: base_reason
+#: field:base.reason,create_uid:0 field:base.reason.tier.one,create_uid:0
+#: field:base.reason.tier.three,create_uid:0
+#: field:base.reason.tier.two,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: base_reason
+#: field:base.reason,create_date:0 field:base.reason.tier.one,create_date:0
+#: field:base.reason.tier.three,create_date:0
+#: field:base.reason.tier.two,create_date:0
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: base_reason
+#: field:base.reason,details:0
+msgid "Details"
+msgstr "Detalles"
+
+#. module: base_reason
+#: field:base.reason,display_name:0 field:base.reason.tier.one,display_name:0
+#: field:base.reason.tier.three,display_name:0
+#: field:base.reason.tier.two,display_name:0
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: base_reason
+#: field:base.reason.tier.one,model_ids:0
+msgid "Filter to"
+msgstr "Aplicar a los datos de"
+
+#. module: base_reason
+#: field:base.reason.tier.one,name:0
+msgid "First Tier Reason"
+msgstr "Razón / Motivo"
+
+#. module: base_reason
+#: field:base.reason,id:0 field:base.reason.tier.one,id:0
+#: field:base.reason.tier.three,id:0 field:base.reason.tier.two,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: base_reason
+#: field:base.reason,__last_update:0
+#: field:base.reason.tier.one,__last_update:0
+#: field:base.reason.tier.three,__last_update:0
+#: field:base.reason.tier.two,__last_update:0
+msgid "Last Modified on"
+msgstr "Modificada la última vez el"
+
+#. module: base_reason
+#: field:base.reason,write_uid:0 field:base.reason.tier.one,write_uid:0
+#: field:base.reason.tier.three,write_uid:0
+#: field:base.reason.tier.two,write_uid:0
+msgid "Last Updated by"
+msgstr "Actualizada última vez por"
+
+#. module: base_reason
+#: field:base.reason,write_date:0 field:base.reason.tier.one,write_date:0
+#: field:base.reason.tier.three,write_date:0
+#: field:base.reason.tier.two,write_date:0
+msgid "Last Updated on"
+msgstr "Actualizada última vez el"
+
+#. module: base_reason
+#: field:base.reason.tier.three,parent_id:0
+#: field:base.reason.tier.two,parent_id:0
+msgid "Parent"
+msgstr "Padre"
+
+#. module: base_reason
+#: model:ir.model,name:base_reason.model_base_reason
+msgid "Reasons"
+msgstr "Razones"
+
+#. module: base_reason
+#: model:ir.ui.menu,name:base_reason.menu_reasons_config
+msgid "Reasons Config"
+msgstr "Configurar Razones / Motivos"
+
+#. module: base_reason
+#: field:base.reason.tier.two,name:0
+msgid "Second Tier Reason"
+msgstr "Razón de 2º Nivel"
+
+#. module: base_reason
+#: model:res.groups,name:base_reason.group_additional_tiers
+msgid "Show additional tiers for reasons"
+msgstr "Mostrar niveles para las razones"
+
+#. module: base_reason
+#: field:base.reason.tier.three,name:0
+msgid "Third Tier Reason"
+msgstr "Razón de 3º Nivel"
+
+#. module: base_reason
+#: field:base.reason,tier_one_id:0
+#: model:ir.model,name:base_reason.model_base_reason_tier_one
+msgid "Tier One Reason"
+msgstr "Razón o Motivo"
+
+#. module: base_reason
+#: view:base.reason.tier.one:base_reason.tier_one_form_view
+#: view:base.reason.tier.one:base_reason.tier_one_tree_view
+#: model:ir.actions.act_window,name:base_reason.tier_one_act
+#: model:ir.ui.menu,name:base_reason.menu_tier_one
+msgid "Tier One Reasons"
+msgstr "Razones / Motivos"
+
+#. module: base_reason
+#: field:base.reason,tier_three_id:0
+#: model:ir.model,name:base_reason.model_base_reason_tier_three
+msgid "Tier Three Reason"
+msgstr "Razón de 3º Nivel"
+
+#. module: base_reason
+#: view:base.reason.tier.three:base_reason.tier_three_form_view
+#: view:base.reason.tier.three:base_reason.tier_three_tree_view
+#: model:ir.ui.menu,name:base_reason.menu_tier_three
+msgid "Tier Three Reasons"
+msgstr "Razones de 3º Nivel"
+
+#. module: base_reason
+#: field:base.reason,tier_two_id:0
+#: model:ir.model,name:base_reason.model_base_reason_tier_two
+msgid "Tier Two Reason"
+msgstr "TRazón de 2º Nivel"
+
+#. module: base_reason
+#: view:base.reason.tier.two:base_reason.tier_two_form_view
+#: view:base.reason.tier.two:base_reason.tier_two_tree_view
+#: model:ir.actions.act_window,name:base_reason.tier_two_act
+#: model:ir.ui.menu,name:base_reason.menu_tier_two
+msgid "Tier Two Reasons"
+msgstr "Razones de 2º Nivel"
+
+#. module: base_reason
+#: model:ir.actions.act_window,name:base_reason.tier_three_act
+msgid "Tier three Reasons"
+msgstr "Razones de 3º Nivel"

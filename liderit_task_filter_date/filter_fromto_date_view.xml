@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+
+#filtros para permitir buscar tareas entre fechas previstas segun nuevos campos funcion
+        <record id="project_task_fromtodate_filter" model="ir.ui.view">
+            <field name="name">project.task.fromtodate.search</field>
+            <field name="model">project.task</field>
+            <field name="inherit_id" ref="project.view_task_search_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <field name="last_due_date_to" string="Hasta F.Final" filter_domain="[('date_end','&lt;=',self)]"/>
+                    <field name="due_date_to" string="Hasta F.Inicio" filter_domain="[('date_start','&lt;=',self)]"/>
+                    <field name="due_date_from" string="Desde F.Inicio" filter_domain="[('date_start','&gt;=',self)]"/>
+                </xpath>
+            </field>
+        </record>
+
+
+  </data>
+</openerp>

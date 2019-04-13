@@ -1,0 +1,43 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* stock_picking_type_2binvoiced
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-01-18 16:32+0000\n"
+"PO-Revision-Date: 2019-01-18 17:34+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 1.6.10\n"
+
+#. module: stock_picking_type_2binvoiced
+#: field:stock.picking.type,invoice_type:0
+msgid "Default Invoice Status"
+msgstr "Control de Facturas por Defecto"
+
+#. module: stock_picking_type_2binvoiced
+#: selection:stock.picking.type,invoice_type:0
+msgid "Not Applicable"
+msgstr "No aplicable"
+
+#. module: stock_picking_type_2binvoiced
+#: model:ir.model,name:stock_picking_type_2binvoiced.model_stock_picking
+msgid "Picking List"
+msgstr "Albarán"
+
+#. module: stock_picking_type_2binvoiced
+#: model:ir.model,name:stock_picking_type_2binvoiced.model_stock_picking_type
+msgid "The picking type determines the picking view"
+msgstr "El tipo de albarán determina la vista de albarán"
+
+#. module: stock_picking_type_2binvoiced
+#: selection:stock.picking.type,invoice_type:0
+msgid "To Be Invoiced"
+msgstr "Para ser facturado"

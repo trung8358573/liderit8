@@ -1,0 +1,37 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sale_order_invisible_for_customer
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0-20150909\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-28 12:51+0000\n"
+"PO-Revision-Date: 2018-08-28 12:51+0003\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_order_invisible_for_customer
+#: help:sale.order,invisible_totals:0
+msgid "Allows to hide the totals to place the order in front of the customer without the customer seeing it."
+msgstr "Permite ocultar los totales para realizar el pedido delante del cliente sin que este lo visualice"
+
+#. module: sale_order_invisible_for_customer
+#: field:sale.order,invisible_totals:0
+msgid "Invisibilize totals"
+msgstr "Invisibilizar totales"
+
+#. module: sale_order_invisible_for_customer
+#: model:ir.model,name:sale_order_invisible_for_customer.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: sale_order_invisible_for_customer
+#: view:sale.order:sale_order_invisible_for_customer.invisible_form1
+msgid "{'invisible': [('invisible_totals', '=', True)]}"
+msgstr "{'invisible': [('invisible_totals', '=', True)]}"
+

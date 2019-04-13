@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="saldofinal_account_journal_form">
+           	<field name="name">saldofinal_account_journal_form</field>
+           	<field name="model">account.journal</field>
+           	<field name="inherit_id" ref="account.view_account_journal_form"/>
+           	<field name="arch" type="xml">
+               	<xpath expr="//field[@name='type']" position="after">
+                   	<field name="saldo_final" />
+               	</xpath>
+           	</field>
+       	</record>
+	</data>
+</openerp>

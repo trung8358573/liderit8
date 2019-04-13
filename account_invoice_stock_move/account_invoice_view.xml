@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+<data>
+
+<record id="account_invoice_stock_move_form" model="ir.ui.view">
+    <field name="name">account_invoice_stock_move_form</field>
+    <field name="model">account.invoice</field>
+    <field name="inherit_id" ref="account.invoice_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='fiscal_position']" position="after">
+            <field name="alter_stock"/>
+                <group col="4" colspan="2">
+                    <field name="stock_loc_src_id" attrs="{'invisible': [('alter_stock', '=', False)],
+                        'required': [('alter_stock', '=', True)]}"/>
+                    <field name="stock_loc_dest_id" attrs="{'invisible': [('alter_stock', '=', False)],
+                        'required': [('alter_stock', '=', True)]}"/>
+                </group>
+        </xpath>
+    </field>
+</record>
+
+<record id="account_invoice_supplier_stock_move_form" model="ir.ui.view">
+    <field name="name">account_invoice_supplier_stock_move_form</field>
+    <field name="model">account.invoice</field>
+    <field name="inherit_id" ref="account.invoice_supplier_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='fiscal_position']" position="after">
+            <group>
+                <field name="alter_stock"/>
+                <group col="4" colspan="2">
+                    <field name="stock_loc_src_id" attrs="{'invisible': [('alter_stock', '=', False)],
+                        'required': [('alter_stock', '=', True)]}"/>
+                    <field name="stock_loc_dest_id" attrs="{'invisible': [('alter_stock', '=', False)],
+                        'required': [('alter_stock', '=', True)]}"/>
+                </group>
+            </group>
+        </xpath>
+
+    </field>
+</record>
+
+
+
+
+
+</data>
+</openerp>

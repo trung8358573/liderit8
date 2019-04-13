@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+
+        <record id="view_sale_bysupplier_search" model="ir.ui.view">
+            <field name="name">sale.by.supplier.search</field>
+            <field name="model">sale.by.supplier</field>
+            <field name="arch" type="xml">
+                <search string="Ventas por Proveedores">
+                    <field name="supplier" string="Proveedor"/>
+                    <field name="name_template" string="Producto"/>
+                    <field name="date" string="Hasta Fecha" filter_domain="[('date','&lt;=',self)]"/>
+                    <field name="date" string="Desde Fecha" filter_domain="[('date','&gt;=',self)]"/>
+                    <group expand='1' string='Group by...'>
+                       <filter string='Proveedor' name='supplier' icon="terp-stock_symbol-selection" 
+                            domain="[]" context="{'group_by' : 'supplier'}" />
+                       <filter string='Producto' name='product' icon="terp-stock_symbol-selection" domain="[]" 
+                            context="{'group_by' : 'name_template'}" />
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_sale_bysupplier_tree1" model="ir.ui.view">
+            <field name="name">view.sale.bysupplier.tree1</field>
+            <field name="model">sale.by.supplier</field>
+            <field name="priority">90</field>
+            <field name="arch" type="xml">
+                <tree string="Ventas por proveedor" editable="top">
+                    <field name="supplier"/>
+                    <field name="name_template"/>
+                    <field name="cantidad"/>
+                    <field name="price_unit"/>
+                    <field name="discount"/>
+                    <field name="margin"/>
+                    <field name="date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_sale_bysupplier_form1" model="ir.ui.view">
+            <field name="name">view.sale.bysupplier.form1</field>
+            <field name="model">sale.by.supplier</field>
+            <field name="arch" type="xml">
+                <form string="Ventas por proveedor">
+                    <group>
+                        <field name="name_template"/>
+                        <field name="supplier"/>
+                    </group>
+                    <group>
+                        <field name="cantidad"/>
+                        <field name="price_unit"/>
+                        <field name="discount"/>
+                        <field name="margin"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_sale_bysupplier_info" model="ir.actions.act_window">
+            <field name="name">Ventas por Proveedor</field>
+            <field name="res_model">sale.by.supplier</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_sale_bysupplier_tree1"/>
+            <field name="search_view_id" ref="view_sale_bysupplier_search"/>
+        </record>
+
+        <menuitem
+            id="menu_sale_bysupplier_info"
+            name="Ventas por Proveedor"
+            sequence="60"
+            action="action_sale_bysupplier_info"
+            parent="purchase.menu_procurement_management"/>
+    </data>
+</openerp>

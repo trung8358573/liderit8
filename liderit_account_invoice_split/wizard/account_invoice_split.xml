@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record id="liderit_account_invoice_split_view_form" model="ir.ui.view">
+      <field name="name">Split Invoice</field>
+      <field name="model">account.invoice.split</field>
+      <field name="inherit_id" ref="account_invoice_split.account_invoice_split_view_form"/>
+      <field name="arch" type="xml">
+          <xpath expr="//form/group" position="before">
+            <group>
+              <separator string="Amount without taxes to split invoice" colspan="4" cols="6"/>
+              <field name='split_amount' cols="4"/>
+              <field name='reset_taxes' cols="2"/>
+              <field name='split_journal' required="True"/>
+            </group>
+          </xpath>
+
+      </field>
+    </record>
+
+  </data>
+</openerp>
+

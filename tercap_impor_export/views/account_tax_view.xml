@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="tercap_account_tax_form_view">
+            <field name="name">account.tax.tercap.form</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="account.view_tax_form" />
+            <field name="arch" type="xml">
+              <notebook position="inside">
+              <page string="Interfase Tercap">
+              	<group>
+				   <field name="tercap_codiva" />
+                 </group>
+                </page>
+              </notebook>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="tercap_account_tax_tree_view">
+            <field name="name">account.tax.tercap.tree</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="account.view_tax_tree" />
+            <field name="arch" type="xml">
+              <xpath expr="//field[@name='description']" position="after">
+					 <field name="tercap_codiva" />
+			  </xpath>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="tercap_account_tax_search">
+            <field name="name">account.tax.tercap.search</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="account.view_account_tax_search"/>
+            <field name="arch" type="xml">
+                <group string="Group By" position="inside">
+                    <filter string="tratamiento en Tercap" context="{'group_by':'tercap_codiva'}"/>       
+                </group>
+            </field>
+        </record>
+        
+        
+         
+        
+    </data>
+</openerp>

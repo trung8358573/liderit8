@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	<!--=========================================================================== Vista form ======================================================================================= -->
+	 	<record model="ir.ui.view" id="tridente_ferias_form_view">
+            <field name="name">tridente_ferias_form</field>
+            <field name="model">tr.ferias</field>
+            <field name="type">form</field>       
+            <field name="arch" type="xml">
+                <form string="Fair">
+                	<group>
+						<field name="f_descripcion"/>
+                   	</group> 	
+	            </form>
+            </field>
+        </record>
+		<!--=========================================================================== Vista tree ======================================================================================= -->
+		<record model="ir.ui.view" id="tridente_ferias_tree_view">
+            <field name="name">tridente_ferias_lista</field>
+            <field name="model">tr.ferias</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree toolbar="1"  string="Fairs">
+        			<field name="f_descripcion"/>
+                </tree>
+            </field>
+        </record>  
+        <!--=========================================================================== Busqueda hoteles ============================================================================ -->
+  		<record id="tridente_ferias_search" model="ir.ui.view">
+        	<field name="name">tridente_ferias_search</field>
+        	<field name="model">tr.ferias</field>
+        	<field name="arch" type="xml">
+            <search string="fairs search">
+                    <group expand="0" string="Group By">
+               		
+             		</group>
+                </search>
+            </field>
+        </record>
+		<!--=========================================================================== Acciones======================================================================================= -->
+        <record model="ir.actions.act_window" id="ferias_action">
+            <field name="name">Fairs</field>
+            <field name="res_model">tr.ferias</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="tridente_ferias_search"/>
+        </record>  
+	</data>
+</openerp>

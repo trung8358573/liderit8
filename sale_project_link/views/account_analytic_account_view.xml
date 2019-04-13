@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data> 
+ <!--========================================= ===============================================================================-->	
+        <record id="sale_link_project_form_inherit" model="ir.ui.view">
+            <field name="name">sale.link.project.form.inh</field>
+            <field name="model">account.analytic.account</field> 
+	        <field name="inherit_id" ref="analytic.view_account_analytic_account_form"/>
+            <field name="arch" type="xml">	
+                <xpath expr="//notebook" position="inside">	             	
+	              	    <page string="Open Budgets">
+		              	   <group>
+						      	<field name="sale_ids"  nolabel="1" widget="one2many_list">		
+						   			<tree string="Open Budgets" create="false" delete="false" edit="false"> 			   	       
+                    						 <field name="name" string="Quotation Number"/>
+                    						 <field name="date_order"/>
+                    						 <field name="partner_id"/>
+                    						 <field name="user_id"/>
+                    						 <field name="amount_total" sum="Total Tax Included"/>
+                    						 <field name="state"/>              					                   			
+				                    </tree>
+						   	    </field>
+		                   </group>
+	                   </page>   
+                </xpath>
+
+            </field> 
+        </record>
+
+    </data>
+</openerp>

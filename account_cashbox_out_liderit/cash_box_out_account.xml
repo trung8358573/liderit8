@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<!-- ACCOUNT JOURNAL -->
+<record id="view_cash_box_out_pos_form" model="ir.ui.view">
+    <field name="name">account_cashbox_out_liderit.cashbox_out_form</field>
+    <field name="model">cash.box.out</field>
+    <field name="inherit_id" ref="account.cash_box_out_form"/>
+    <field name="arch" type="xml">
+        <field name="amount" position="after">
+            <field name="account_id" required="True" domain="[('type','!=','view')]"/>
+        </field>
+    </field>
+</record>
+
+</data>
+</openerp>

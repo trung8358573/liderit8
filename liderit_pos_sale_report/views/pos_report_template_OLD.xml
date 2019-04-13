@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+        <report
+            id="pos_sales_report"
+            string="Diarios de Venta TPV"
+            model="pos.order"
+            report_type="qweb-pdf"
+            file="liderit_pos_sale_report.report_daily_pos_sales"
+            name="liderit_pos_sale_report.report_daily_pos_sales"
+            menu="False"
+        />
+
+        <template id="report_daily_pos_sales">
+            <div class="page">
+                <h3><center><strong>VENTAS - TPV</strong></center></h3>
+                <table width="100%" style="padding:40px;height:25px;margin-left:50px;margin-top:35px;border: None solid black;">
+                    <th width="30%"></th>
+                    <th width="30%"></th>
+                    <th width="30%"></th>
+                    <th width="30%"></th>
+                    <tr>
+                        <td style="width:50px;height:25px;margin-left:50px;" >
+                            <span>Empresa: </span><span t-att-style="style" t-esc="res_company.name"/>
+                        </td>
+                        <td style="width:50px;height:25px;margin-left:50px;" t-if="data['form']['point_of_sale']">
+                            <span t-if="data['form']['point_of_sale']">TPV: </span>
+                            <span t-att-style="style" t-esc="data['form']['point_of_sale'][1]"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:50px;height:25px;margin-left:50px;" align="left">
+                            <span>Fecha informe: </span>
+                            <span t-att-style="style" t-esc="time.strftime('%d-%m-%Y' ,time.strptime(get_date(),'%Y-%m-%d'))"/>
+                        </td>
+                        <td style="width:50px;height:25px;margin-left:50px;" align="left" t-if="data['form']['sales_person']">
+                            <span t-if="data['form']['sales_person']">Vendido por: </span>
+                            <span t-att-style="style" t-esc="data['form']['sales_person'][1]"/>
+                        </td>
+                    </tr>
+                </table>
+                <table class="table table-condensed">
+                <!--
+                    <thead>
+                        <tr >
+                            <th style="text-align:center; background-color:#9b9da0 !important;">SL.NO</th>
+                            <th style="text-align:center; background-color:#9b9da0 !important;">Nº PEDIDO</th>
+                            <th style="text-align:center; background-color:#9b9da0 !important;">FECHA</th>
+                            <th style="text-align:center; background-color:#9b9da0 !important;">CLIENTE</th>
+                            <th style="text-align:center; background-color:#9b9da0 !important;">IVA</th>
+                            <th style="text-align:center; background-color:#9b9da0 !important;">TOTAL</th>
+                            <th style="text-align:center; background-color:#9b9da0 !important;" colspan="3">COBROS</th>
+                        </tr>
+                        <tr style="background-color: #d3d3d3;border-style: solid;">
+                           <th style="background-color:#9b9da0 !important;"></th>
+                           <th style="background-color:#9b9da0 !important;"></th>
+                           <th style="background-color:#9b9da0 !important;"></th>
+                           <th style="background-color:#9b9da0 !important;"></th>
+                           <th style="background-color:#9b9da0 !important;"></th>
+                           <th style="text-align:center; background-color:#9b9da0 !important;">CAJA</th>
+                           <th style="text-align:center; background-color:#9b9da0 !important;" >BANCOS</th>
+                        </tr>
+                    </thead>
+                -->
+                    <tbody>
+                        <tr >
+                            <!--th style="text-align:center; background-color:#9b9da0 !important;">SL.NO</th-->
+                            <th style="text-align:center; background-color:#9b9da0 !important;">Nº PEDIDO</th>
+                            <th style="text-align:center; background-color:#9b9da0 !important;">FECHA</th>
+                            <th style="text-align:center; background-color:#9b9da0 !important;">CLIENTE</th>
+                            <th style="text-align:center; background-color:#9b9da0 !important;">IVA</th>
+                            <th style="text-align:center; background-color:#9b9da0 !important;">TOTAL</th>
+                            <th style="text-align:center; background-color:#9b9da0 !important;" colspan="3">COBROS</th>
+                        </tr>
+                        <tr style="background-color: #d3d3d3;border-style: solid;">
+                           <th style="background-color:#9b9da0 !important;"></th>
+                           <th style="background-color:#9b9da0 !important;"></th>
+                           <th style="background-color:#9b9da0 !important;"></th>
+                           <th style="background-color:#9b9da0 !important;"></th>
+                           <th style="background-color:#9b9da0 !important;"></th>
+                           <th style="text-align:center; background-color:#9b9da0 !important;">CAJA</th>
+                           <th style="text-align:center; background-color:#9b9da0 !important;" >BANCOS</th>
+                        </tr>
+
+                        <t t-set="total_daily_taxes" t-value='0'></t>
+                        <t t-set="total_daily_sales" t-value='0'></t>
+                        <t t-set="total_cash" t-value='0'></t>
+                        <t t-set="total_bank" t-value='0'></t>
+                        <t t-set="sl_no" t-value='0'></t>
+                        <t t-foreach="get_sale_details(data)" t-as="b">
+
+
+                            <tr>
+                                <t t-set="sl_no" t-value="sl_no+1"/>
+                                <!--td>
+                                    <span t-att-style="style" t-esc="sl_no"/>
+                                </td-->
+                                <td style="text-align:center;">
+                                    <span t-att-style="style" t-esc="b['order']"/>
+                                </td>
+                                <td style="text-align:center;">
+                                    <!--span t-att-style="style" t-esc="b['order_date']"/-->
+                                    <span t-att-style="style" t-esc="time.strftime('%d-%m-%Y %H:%M:%S',time.strptime(b['order_date'],'%Y-%m-%d %H:%M:%S'))"/>
+
+                                </td>
+                                <td>
+                                   <span t-att-style="style" t-esc="b['partner']"/>
+                                </td>
+                                <td style="text-align:right;">
+                                    <span t-att-style="style" t-esc="'{0:.2f}'.format(float(b['tax'])).replace('.',',')"/>
+                                </td>
+                                <td style="text-align:right;">
+                                    <span t-att-style="style" t-esc="'{0:.2f}'.format(float(b['price'])).replace('.',',')"/>
+                                </td>
+                                <td style="text-align:right;">
+                                    <span t-att-style="style" t-esc="'{0:.2f}'.format(float(b['cash'])).replace('.',',')"/>
+                                </td>
+                                 <td style="text-align:right;">
+                                    <span t-att-style="style" t-esc="'{0:.2f}'.format(float(b['bank'])).replace('.',',')"/>
+                                </td>
+                                <t t-set="total_daily_taxes" t-value = "total_daily_taxes + b['tax'] "></t>
+                                <t t-set="total_daily_sales" t-value = "total_daily_sales + b['price'] "></t>
+                                <t t-set="total_cash" t-value = "total_cash + b['cash'] "></t>
+                                <t t-set="total_bank" t-value = "total_bank + b['bank'] "></t>
+                            </tr>
+                        </t>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td><strong>TOTALES</strong></td>
+                            <td style="text-align:right;">
+                                <strong>
+                                    <t t-esc="'{0:.2f}'.format(float(total_daily_taxes)).replace('.',',')"></t>
+                                </strong></td>
+                            <td style="text-align:right;">
+                                <strong>
+                                    <t t-esc="'{0:.2f}'.format(float(total_daily_sales)).replace('.',',')"></t>
+                                </strong></td>
+                            <td style="text-align:right;">
+                                <strong>
+                                    <t t-esc="'{0:.2f}'.format(float(total_cash)).replace('.',',')"></t>
+                                </strong></td>
+                            <td style="text-align:right;">
+                                <strong>
+                                    <t t-esc="'{0:.2f}'.format(float(total_bank)).replace('.',',')"></t>
+                                </strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </template>
+</data>
+</openerp>

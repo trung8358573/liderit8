@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="analytic_account_move_line_view_tree">
+            <field name="name">analytic_account_move_line_view_tree</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account.view_move_line_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='account_tax_id']" position="after">
+                    <field name="analytic_account_id" />
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_account_move_line_group_production_stock_move" model="ir.ui.view">
+            <field name="name">account.move.line.group.production.stock.move</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account.view_account_move_line_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="/search[@string='Search Journal Items']" position="inside">
+                    <field name="analytic_account_id"/>
+                </xpath>
+                
+                <xpath expr="//group[@string='Group By']/filter[@string='Period']" position="after">
+                    <filter string="Analytic" icon="terp-folder-green" domain="[]" context="{'group_by':'analytic_account_id'}"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>

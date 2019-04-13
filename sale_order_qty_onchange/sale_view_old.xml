@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+		<record id="sale_onchange_qty_form_view" model="ir.ui.view">
+		    <field name="name">sale.onchange.qty.form</field>
+		    <field name="model">sale.order</field>
+		    <field name="inherit_id" ref="sale.view_order_form"/>
+		    <field name="arch" type="xml">
+		    	<xpath expr="//field[@name='order_line']/tree//field[@name='product_uom_qty']" position="replace">
+                    <field context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'company_id': parent.company_id}"
+                             name="product_uom_qty" 
+                       on_change="product_qty_change(parent.pricelist_id,product_id,product_uom_qty,product_uom,product_uos_qty,False,name,parent.partner_id, False, False, parent.date_order, product_packaging, parent.fiscal_position, True, context)"/>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form//field[@name='product_uom_qty']" position="replace">
+                	<field context="{'partner_id':parent.partner_id, 'quantity':product_uom_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'company_id': parent.company_id}"
+                             name="product_uom_qty" 
+                       on_change="product_qty_change(parent.pricelist_id,product_id,product_uom_qty,product_uom,product_uos_qty,False,name,parent.partner_id, False, False, parent.date_order, product_packaging, parent.fiscal_position, True, context)"/>
+                </xpath>
+
+		    </field>
+		</record>
+
+    </data>
+</openerp>

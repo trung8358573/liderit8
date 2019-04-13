@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>        	
+        <record id="view_sale_exception_groups_form" model="ir.ui.view">
+            <field name="name">view_sale_exception_groups.form.inh</field>
+            <field name="model">sale.exception</field> 
+            <field name="type">form</field> 
+	        <field name="inherit_id" ref="sale_exceptions.view_sale_exception_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='sequence']" position="after"> 
+            	     <group  colspan="4" col="2">
+            	      <separator string="Groups of users exceptions"/>   
+            	      <newline/>	
+						<field name="groups_ids"   nolabel="1"  groups="base.group_sale_manager"  widget="many2many_tags"
+    						   options="{'no_create_edit': True}"> 
+				        </field>	
+					 </group>
+				</xpath>       
+			</field> 
+        </record>        
+    </data>
+</openerp> 

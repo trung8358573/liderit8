@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	<!--=========================================================================== Vista form ======================================================================================= -->
+	 	<record model="ir.ui.view" id="migracion_parameters_form_view">
+            <field name="name">parameters.form</field>
+            <field name="model">par.migracion</field>
+            <field name="type">form</field>        
+            <field name="arch" type="xml">
+                <form string="Parameters" >
+                	<newline/>
+                    <separator string="Parameters Control"/>     
+                 	<div class="oe_title">
+		                        <h1>
+		                      
+		                        	<field name="company_id" class="oe_inline" />
+		                            <field name="par_name" class="oe_inline" placeholder="par00"  />
+		                     
+		                        </h1>
+                    </div> 	    
+                    	<newline/>                     	
+	                    <separator string="  -Carga inicial - Migracion de datos"/>  
+	                   	<group col="2" colspan="2">
+							<field name="interface_csv_inicial_load"/>
+							<field name="cliente_generico_id" attrs="{'required':[('interface_csv_inicial_load','=', True)]}"/>
+							<field name="input_ruta_inicial_load" attrs="{'required':[('interface_csv_inicial_load','=', True)]}"/> 
+							<field name="output_ruta" attrs="{'required':[('interface_csv_inicial_load','=', True)]}"/> 
+						</group> 
+				 		<separator string="  -Tablas a cargar"/>  
+	                   	<group col="4" colspan="4">
+							<field name="name_file_vehiculos_b"/>  
+							<field name="name_file_vehiculos" attrs="{'required':[('interface_csv_inicial_load','=', True)]}"/>  							
+							<field name="name_file_octanorm_b"/>  
+							<field name="name_file_octanorm" attrs="{'required':[('interface_csv_inicial_load','=', True)]}"/>  
+							<field name="name_file_crm_b"/>  
+							<field name="name_file_crm" attrs="{'required':[('interface_csv_inicial_load','=', True)]}"/>  
+						</group> 
+						<newline/>
+                     	<separator/>  	
+						<group col="2" colspan="2">
+     						<button name="tr_control_inicial_load" string="Run Now" type="object" class="oe_highlight" attrs="{'invisible':[('interface_csv_inicial_load','=', False)]}"/> 
+	                   	</group> 
+	            </form>
+            </field>
+        </record>
+		<!--=========================================================================== Vista tree ======================================================================================= -->
+		<record model="ir.ui.view" id="migracion_parameters_tree_view">
+            <field name="name">parameters.lista</field>
+            <field name="model">par.migracion</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree toolbar="1"  string="Parameters">
+                	 <field name="company_id" />
+		             <field name="par_name"  />
+					 <field name="input_ruta_inicial_load"/>
+                </tree>
+            </field>
+        </record>  
+		<!--=========================================================================== Acciones======================================================================================= -->
+        <record model="ir.actions.act_window" id="migracion_action_parameters">
+            <field name="name">Parameters</field>
+            <field name="res_model">par.migracion</field>
+            <field name="view_mode">tree,form</field>
+        </record>  
+	</data>
+</openerp>

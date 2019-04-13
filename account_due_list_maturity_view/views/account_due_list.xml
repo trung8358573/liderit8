@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<openerp>
+    <data>
+
+        <record id="account_due_list_maturity_tree" model="ir.ui.view">
+            <field name="name">Account Due List IMaturity Ordered</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account_due_list.view_payments_tree"/>
+            <field name="arch" type="xml" >
+                <tree string="Payments" position="attributes">
+                    <!--attribute name="colors">grey:reconcile_id!=False;red:date_maturity&lt;current_date;green:payment_type=='payable';blue:payment_type=='receivable'</attribute-->
+                    <attribute name="fonts">bold:date_maturity==current_date)</attribute>
+                    <attribute name="default_order">date_maturity</attribute>
+                </tree>
+                <field name="date_maturity" position="replace"/>
+                <field name="partner_ref" position="replace"/>
+                <field name="partner_id" position="replace"/>
+                <field name="stored_invoice_id" position="before">
+                    <field name="date_maturity" />
+                    <field name="partner_ref" />
+                    <field name="partner_id" />
+                </field>
+
+                <field name="payment_term_id" position="replace"/>
+                <field name="maturity_residual" position="replace"/>
+                <field name="debit" position="replace"/>
+                <field name="credit" position="replace"/>
+                <field name="account_id" position="before">
+                    <field name="payment_term_id" />
+                    <field name="maturity_residual"/>
+                    <field name="debit"/>
+                    <field name="credit"/>
+
+                </field>
+
+                <field name="invoice_origin" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="name" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+                <field name="move_id" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </field>
+
+
+                <!--field name="reconcile_partial_id" position="after">
+                    <button string="Registrar pagamento"
+                        name="action_redirect_to_payment" icon="gtk-index" type="object" />
+                </field-->
+            </field>
+        </record>
+
+    </data>
+</openerp>

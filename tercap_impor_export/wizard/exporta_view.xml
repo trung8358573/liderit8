@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record id="generate_exporta_view_tercap" model="ir.ui.view">
+      <field name="name">Export a TERCAP </field>
+      <field name="model">exporta</field>
+      <field name="arch" type="xml">
+      <form string="Exporta to TERCAP">
+        <field invisible="1" name="state"/>
+        <field invisible="1" name="format"/>
+        <label string="Esta acción le permite exportar los datos de clientes de OpenERP"/>
+        <group states="choose" string="Export Settings">
+          <field name="name" colspan="4" nolabel="1"/>
+          <field name="state" colspan="4" nolabel="1"/>
+        </group>
+        <div states="get">
+          <h2>Export Complete</h2>
+          <p>Here is the exported  file: <field name="data" readonly="1" filename="name"/></p>
+          <p>This file was generated using the universal
+            <strong>Unicode/UTF-8</strong>
+            file encoding, please be sure to view and edit using the same encoding.
+          </p>
+        </div>
+        <footer >
+          <button name="create_report71" string="Export" type="object" class="oe_highlight"/>
+          or
+          <button special="cancel" string="Cancel" type="object" class="oe_link"/>
+        </footer>
+      </form>
+      </field>
+    </record>
+    <record id="action_account_invoice_generate_exporta71_view" model="ir.actions.act_window">
+      <field name="name">Exporta datos de clientes a Tercap </field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">exporta</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">form</field>
+      <field name="target">new</field>
+    </record>
+ 
+    <menuitem id="menu_generate_export" name="Exports" parent="account.menu_finance" sequence="3"/>
+    <menuitem id="menu_generate_export71_TERCP" name="Exportacion  a TERCAP" parent="menu_generate_export" action="action_account_invoice_generate_exporta71_view" groups="account.group_account_user"/>
+       
+
+  </data>
+</openerp>

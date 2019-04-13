@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+    <record id="partner_sequence_view_partner_form" model="ir.ui.view">
+        <field name="name">partner.sequence.view.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='function']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <!--xpath expr="//notebook/page[@name='sales_purchases']/group/group/field[@name='ref']" position="replace"-->
+            <xpath expr="//field[@name='ref']" position="replace">
+            </xpath>
+            <!--xpath expr="//field[@name='category_id']" position="after">
+                <group>
+                    <field name="partner_type_id"/>
+                    <field name="ref" 
+                        attrs="{'readonly':[('ref_editable', '==', False)]}" />
+                    <field name ="ref_editable" invisible="True"/>
+                </group>
+            </xpath-->
+
+            <xpath expr="//div[@name='buttons']" position="after">
+                <group col="5" colspan="4">
+                    <field name="partner_type_id" />
+                    <field name="ref" 
+                        attrs="{'readonly':[('ref_editable', '==', False)]}" />
+                    <button string="Cambiar Código" type="object" name="button_edit_ref"/>
+
+                    <field name ="ref_editable" invisible="True"/>
+                </group>
+            </xpath>
+            
+        </field>
+    </record>
+
+<!--ampliamos la vista search para filtrar y agrupar por tipo-->
+    <record id="view_res_partnertype_filter" model="ir.ui.view">
+        <field name="name">res.partnertype.filter</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter" />
+            <field name="arch" type="xml">
+                <xpath expr="//group/filter[@string='Company']" position="after">
+                    <filter string="Tipo" name="partner_type" context="{'group_by': 'partner_type_id'}"/>
+                </xpath>
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="partner_type_id" string="Tipo" filter_domain="[('partner_type_id','ilike',self)]"/>
+                </xpath>
+            </field>
+    </record>
+
+
+
+</data>
+</openerp>

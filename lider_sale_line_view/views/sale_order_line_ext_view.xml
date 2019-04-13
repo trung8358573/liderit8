@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id="lider_sale_order_line_search_view" model="ir.ui.view">
+            <field name="name">lider.sale.order.line.search</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="sale.view_sales_order_line_filter" />
+            <field name="arch" type="xml">
+
+                <search string="Search Sales Order" position="inside">
+                    <filter string="Neto Nulo" name="lines_reduce_null" icon="terp-personnal" domain="[('line_netnull','=', 0)]"/>
+
+                    <filter string="Bajo minimo" name="lines_over_minprice" icon="terp-personnal" domain="[('over_minprice','=', True)]"/>
+
+                </search>
+            </field>
+        </record>
+
+
+         <!--================================  order line  inherit ===============================================================================-->      
+       <record model="ir.ui.view" id="lider_sale_line_tree">
+            <field name="name">lider_sale_line_tree</field>
+            <field name="model">sale.order.line</field>
+            <field name="inherit_id" ref="sale.view_order_line_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='salesman_id']" position="after">
+                    <field name="price_reduce" string="Precio Neto"/>
+                    <field name="over_minprice" />
+                </xpath>
+                <xpath expr="//field[@name='salesman_id']" position="attributes">
+                  <attribute name="invisible">1</attribute>
+              </xpath>
+            </field>
+        </record>
+
+
+
+
+    </data>
+</openerp>

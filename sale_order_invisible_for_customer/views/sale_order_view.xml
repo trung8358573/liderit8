@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="invisible_form1" model="ir.ui.view">
+		    <field name="name">invisible_form1</field>
+		    <field name="model">sale.order</field>
+		    <field name="inherit_id" ref="sale.view_order_form"/>		    
+		    <field name="arch" type="xml">		
+		    		<xpath expr="//group[@name='sale_total']" position="before">
+                		<group name="invisible_grp">
+                    		<field name="invisible_totals" nolabel='1'/>
+                    		            
+                		</group>
+            		</xpath>		
+		    		<xpath expr="//group[@name='sale_total']" position="attributes">
+		        		<attribute name="attrs">{'invisible': [('invisible_totals', '=', True)]}</attribute>
+				   </xpath>		    
+		    </field>
+		</record>
+
+	</data>
+</openerp>

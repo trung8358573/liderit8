@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="view_daily_sales_report" model="ir.ui.view">
+            <field name="name">Informe TPV</field>
+            <field name="model">pos.report</field>
+            <field name="arch" type="xml">
+                <form string="Intervalo del Informe">
+                    <group>
+                        <group>
+                            <field name="date" string="Desde"/>
+                            <field name="date_to" string="Hasta"/>
+                        </group>
+                        <group>
+                            <field name="point_of_sale" options="{'no_create': True}" string="TPV"/>
+                            <field name="sales_person" options="{'no_create': True}" string="Vendedor"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="print_sales_report" string="Imprimir" type="object"  class="oe_highlight"/>
+                        or
+                        <button string="Cancelar" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="get_daily_sales_report" model="ir.actions.act_window">
+            <field name="name">Informe TPV</field>
+            <field name="res_model">pos.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_daily_sales_report"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem id="pos_daily_report" name="Informe TPV" parent="point_of_sale.menu_point_config_product" action="get_daily_sales_report"
+        groups="point_of_sale.group_pos_manager"/>
+
+
+        <!--check en diario para pagos por tarjeta en TPV del tipo 'cash' para registrar devoluciones-->
+        <record model="ir.ui.view" id="liderit_journal_poscard_view">
+                <field name="name">liderit.journal.poscard.view</field>
+                <field name="model">account.journal</field>
+                <field name="inherit_id" ref="point_of_sale.view_account_journal_pos_user_form" />
+                <field name="arch" type="xml">
+                    <xpath expr="//field[@name='self_checkout_payment_method']" position="after">
+                        <field name="pos_card"/>
+                    </xpath>
+                </field>
+        </record>
+
+    </data>
+</openerp>
+

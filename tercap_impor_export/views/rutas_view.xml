@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	<!--=========================================================================== Vista form ======================================================================================= -->
+	 	<record model="ir.ui.view" id="tercap_ruta_form_view">
+            <field name="name">tercap.rutas.form</field>
+            <field name="model">ruta</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Rutas ">
+                <!--21-4-16 cambio la estructura de la vista de rutas, no necesitamos aqui el orden de visita-->
+				<!--
+                	<group col="8" colspan="4">
+						<field name="descripcion"/>	
+						<field name="cod_tercap"/>
+					</group> 
+				
+					<group col="4" colspan="4">	
+						<field name="tercap_incluir"/>	
+						<field name='tipo'/>
+				       	<field name= 'cod_vendedor' domain="[('tercap_vendedor', '=', True)]" invisible="1"/> 
+				       	<field name='cod_equipo'/> 
+				       	<field name='journal_id'/> 
+				        <field name='dias_visita'/>
+				        <field name='orden_visita'/>
+				        <field name='frecuencia'/>
+				         <field name='clave_config' groups="tercap_impor_export.group_tercap_manager"/>
+				    </group> 
+				-->
+					<group col="4" colspan="4">	
+						<group col="2" colspan="2">	
+							<field name="descripcion"/>
+							<field name="cod_tercap"/>
+							<field name='cod_equipo'/>
+							<field name='dias_visita'/>
+							<field name='frecuencia'/>
+						</group>
+						<group col="2" colspan="2">
+							<field name="tercap_incluir"/>	
+							<field name='tipo'/>
+							<field name='journal_id'/>
+							<field name='clave_config' groups="tercap_impor_export.group_tercap_manager"/>
+				       		<field name= 'cod_vendedor' domain="[('tercap_vendedor', '=', True)]" invisible="1"/> 
+				       	</group>
+				    </group>
+
+					<group col="2" colspan="2">	  						
+						<field name='permitir_venta_lotes' groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='permitir_venta_cajas' groups="tercap_impor_export.group_tercap_manager"/>
+				       	<field name= 'cajas_por_defecto'   groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='Permitir_cambio_precio' groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='aviso_riesgo' groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='permitir_cambio_pago'  groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='aplicar_dto_sincab'  groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='permitir_cliente_nuevo' groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='permite_cambio_vendedor' groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='aplicar_cond_retiradas' groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='pedir_lote_retiradas' groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='permitir_cobros' groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='ecotasa_en_precio' groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='ecotasa_en_regalos' groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='ecotasa_sin_cab' groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='perguntar_tipo_doc' groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='pedir_peso_en_linea' groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='permitir_venta_sin_stock' groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='permitir_descarga_parcial' groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='imprimir_albaran_con_iva' groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='imprimir_cabecera' groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='imprimir_corregido' groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='imprimir_anulado' groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='orden_productos' groups="tercap_impor_export.group_tercap_manager"/>
+				        <field name='es_proveedor_mayorista' groups="tercap_impor_export.group_tercap_manager"/>
+                   	</group> 
+	            </form>
+            </field>
+        </record>
+		<!--=========================================================================== Vista tree ======================================================================================= -->
+		<record model="ir.ui.view" id="tercap_ruta_tree_view">
+            <field name="name">tercap.rutas.lista</field>
+            <field name="model">ruta</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree toolbar="1"  string="Rutas" default_order='descripcion,frecuencia,dias_visita'>
+                	<field name="descripcion"/>
+                	<field name='dias_visita'/>
+                	<field name='frecuencia'/>
+                	<field name='cod_equipo'/> 
+                	<field name='tipo'/>
+                	<field name="tercap_incluir"/>	
+                </tree>
+            </field>
+        </record>  
+
+        <!-- vista search de las rutas-->
+	    <record id="tercap_ruta_search_view" model="ir.ui.view">
+	        <field name="name">tercap.ruta.search.view</field>
+	        <field name="model">ruta</field>
+	        <field name="arch" type="xml">
+	            <search string="Rutas">
+	              <filter string="Activas" name="ruta_activa" icon="terp-accessories-archiver" domain="[('tercap_incluir','=',True)]"/>
+	              <separator/>
+	              <field name="descripcion"/>
+	              <field name="cod_equipo"/>
+	              <field name="frecuencia"/>
+	              <field name="dias_visita"/>
+
+	              <group  expand='0' string='Group by...'>
+	                  <filter string='Equipo de venta' domain="[]" context="{'group_by' : 'cod_equipo'}"/>
+	                  <filter string='Tipo' domain="[]" context="{'group_by' : 'tipo'}"/>
+	              </group>
+	            </search>
+	        </field>
+	      </record>
+
+		<!--=========================================================================== Acciones======================================================================================= -->
+        <record model="ir.actions.act_window" id="tercap_action_rutas">
+            <field name="name">Gestion de Rutas</field>
+            <field name="res_model">ruta</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="tercap_ruta_search_view"/>
+        </record>  
+	</data>
+</openerp>

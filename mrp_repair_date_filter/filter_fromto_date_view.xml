@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+
+#filtros para permitir buscar registros en eventos entre fechas previstas segun nuevos campos funcion
+        <record id="mrp_repair_fromtodate_filter" model="ir.ui.view">
+            <field name="name">mrp.repair.fromtodate.search</field>
+            <field name="model">mrp.repair</field>
+            <field name="inherit_id" ref="mrp_repair.view_repair_order_form_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <field name="due_date_from" string="Hasta Fecha Recepción" filter_domain="[('fecha_recepcion','&lt;=',self)]"/>
+                    <field name="due_date_to" string="Desde Fecha Recepción" filter_domain="[('fecha_recepcion','&gt;=',self)]"/>
+                </xpath>
+            </field>
+        </record>
+
+
+
+
+  </data>
+</openerp>

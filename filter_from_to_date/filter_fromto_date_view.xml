@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+
+#filtros para permitir buscar albaranes entre fechas previstas segun nuevos campos funcion
+        <record id="stock_picking_fromtodate_filter" model="ir.ui.view">
+            <field name="name">stock.picking.fromtodate.search</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <field name="due_date_to" string="Hasta Dia Previsto" filter_domain="[('min_date','&lt;=',self)]"/>
+                    <field name="due_date_from" string="Desde Dia Previsto" filter_domain="[('min_date','&gt;=',self)]"/>
+                </xpath>
+            </field>
+        </record>
+
+#filtros para permitir buscar albaranes entre fechas de creacion segun nuevos campos funcion
+<!--
+        <record id="stock_picking_fromto_filter" model="ir.ui.view">
+            <field name="name">stock.picking.fromto.search</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <field name="due_date_to" string="Hasta Fecha" filter_domain="[('date','&lt;=',self)]"/>
+                    <field name="due_date_from" string="Desde Fecha" filter_domain="[('date','&gt;=',self)]"/>
+                </xpath>
+            </field>
+        </record>
+-->
+
+#filtros para permitir buscar movimientos de existencias entre fechas previstas segun nuevos campos funcion
+        <record id="stock_move_fromtodate_search" model="ir.ui.view">
+            <field name="name">stock.move.fromtodate.search</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <field name="due_date_to" string="Hasta Dia" filter_domain="[('date','&lt;=',self)]"/>
+                    <field name="due_date_from" string="Desde Dia" filter_domain="[('date','&gt;=',self)]"/>
+                </xpath>
+            </field>
+        </record>
+
+
+#filtros para permitir buscar presupuestos / pedidos entre fechas previstas segun nuevos campos funcion
+        <record id="sale_order_fromtodate_filter" model="ir.ui.view">
+            <field name="name">sale.order.fromtodate.search</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <field name="due_date_to" string="Hasta Fecha" filter_domain="[('date_order','&lt;=',self)]"/>
+                    <field name="due_date_from" string="Desde Fecha" filter_domain="[('date_order','&gt;=',self)]"/>
+                </xpath>
+            </field>
+        </record>
+
+#filtros para permitir buscar pedidos de compra entre fechas previstas segun nuevos campos funcion
+        <record id="purchase_order_fromtodate_filter" model="ir.ui.view">
+            <field name="name">purchase.order.fromtodate.search</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.view_purchase_order_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <field name="due_date_to" string="Hasta Fecha" filter_domain="[('date_order','&lt;=',self)]"/>
+                    <field name="due_date_from" string="Desde Fecha" filter_domain="[('date_order','&gt;=',self)]"/>
+                </xpath>
+            </field>
+        </record>
+
+#filtros para permitir buscar facturas entre fechas previstas segun nuevos campos funcion
+        <record id="account_invoice_fromtodate_filter" model="ir.ui.view">
+            <field name="name">account.invoice.fromtodate.search</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <field name="due_date_to" string="Hasta Fecha" filter_domain="[('date_invoice','&lt;=',self)]"/>
+                    <field name="due_date_from" string="Desde Fecha" filter_domain="[('date_invoice','&gt;=',self)]"/>
+                </xpath>
+            </field>
+        </record>
+
+
+#filtros para permitir buscar efectos entre fechas previstas segun nuevos campos funcion
+        <record id="account_move_line_fromtodate_filter" model="ir.ui.view">
+            <field name="name">account.move.line.fromtodate.search</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account_due_list.view_payments_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <field name="due_date_to" string="Hasta Fecha" filter_domain="[('date_maturity','&lt;=',self)]"/>
+                    <field name="due_date_from" string="Desde Fecha" filter_domain="[('date_maturity','&gt;=',self)]"/>
+                </xpath>
+            </field>
+        </record>
+
+#filtros para permitir buscar apuntes entre fechas previstas segun nuevos campos funcion
+        <record id="account_move_line_date_filter" model="ir.ui.view">
+            <field name="name">account.move.line.date.filter</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account.view_account_move_line_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <field name="due_date_to" string="Hasta Fecha" filter_domain="[('date','&lt;=',self)]"/>
+                    <field name="due_date_from" string="Desde Fecha" filter_domain="[('date','&gt;=',self)]"/>
+                </xpath>
+            </field>
+        </record>
+
+
+#filtros para permitir buscar talones entre fechas previstas segun nuevos campos funcion
+        <record id="account_voucher_date_filter" model="ir.ui.view">
+            <field name="name">account.voucher.date.filter</field>
+            <field name="model">account.voucher</field>
+            <field name="inherit_id" ref="account_voucher.view_voucher_filter_vendor_pay"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <field name="due_date_to" string="Hasta Fecha" filter_domain="[('date','&lt;=',self)]"/>
+                    <field name="due_date_from" string="Desde Fecha" filter_domain="[('date','&gt;=',self)]"/>
+                </xpath>
+            </field>
+        </record>
+
+  </data>
+</openerp>

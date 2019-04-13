@@ -1,0 +1,446 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* tridente
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0-20150909\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-11-21 16:32+0000\n"
+"PO-Revision-Date: 2016-11-21 16:32+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: tridente
+#: sql_constraint:tr.ferias:0
+msgid " Name of fair already exists !"
+msgstr " El nombre de la feria ya existe !"
+
+#. module: tridente
+#: sql_constraint:tr.sector:0
+msgid " Name of sector already exists !"
+msgstr " El nombre del sector ya existe !"
+
+#. module: tridente
+#: sql_constraint:tr.ferias_abc:0
+msgid " Name of trade fairs already exists !"
+msgstr " El nombre de clasificacion  de ferias ya existe !"
+
+#. module: tridente
+#: sql_constraint:tr.product_crm:0
+msgid " Product already exists !"
+msgstr " El producto crm ya existe !"
+
+#. module: tridente
+#: view:tr.parameters:tridente.tridente_parameters_form_view
+msgid "-Carga inicial - Migracion de datos"
+msgstr "-Carga inicial - Migracion de datos"
+
+#. module: tridente
+#: model:res.groups,name:tridente.group_tridente_admin
+msgid "Administrador"
+msgstr "Administrador"
+
+#. module: tridente
+#: selection:res.partner,tipo_prospector:0
+msgid "Asleep"
+msgstr "Dormido"
+
+#. module: tridente
+#: selection:res.partner,tipo_ferias_asiste:0
+msgid "Both"
+msgstr "Ambos"
+
+#. module: tridente
+#: model:crm.tracking.source,name:tridente.crm_tracking_source_1
+msgid "Campaña"
+msgstr "Campaña"
+
+#. module: tridente
+#: field:tr.parameters,cliente_generico_id:0
+msgid "Cliente Generico"
+msgstr "Cliente Generico"
+
+#. module: tridente
+#: field:tr.parameters,company_id:0
+msgid "Company"
+msgstr "Company"
+
+#. module: tridente
+#: selection:res.partner,tipo_prospector:0
+msgid "Competition"
+msgstr "Competencia"
+
+#. module: tridente
+#: view:crm.lead:tridente.grupo_tridente_oppor_filter
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: tridente
+#: view:res.partner:tridente.grupo_tridente_partner_search_2
+msgid "Create Date"
+msgstr "Fecha Creaccion"
+
+#. module: tridente
+#: field:tr.ferias,create_uid:0
+#: field:tr.ferias_abc,create_uid:0
+#: field:tr.parameters,create_uid:0
+#: field:tr.product_crm,create_uid:0
+#: field:tr.sector,create_uid:0
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: tridente
+#: field:tr.ferias,create_date:0
+#: field:tr.ferias_abc,create_date:0
+#: field:tr.parameters,create_date:0
+#: field:tr.product_crm,create_date:0
+#: field:tr.sector,create_date:0
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: tridente
+#: view:crm.lead:tridente.grupo_tridente_oppor_filter
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: tridente
+#: view:res.partner:tridente.grupo_tridente_partner_search
+#: field:res.partner,disenador:0
+msgid "Disigner"
+msgstr "Disenador"
+
+#. module: tridente
+#: model:crm.tracking.source,name:tridente.crm_tracking_source_4
+msgid "Email INFOWEB"
+msgstr "Email INFOWEB"
+
+#. module: tridente
+#: model:crm.tracking.source,name:tridente.crm_tracking_source_2
+msgid "Email comercial@tridente"
+msgstr "Email comercial@tridente"
+
+#. module: tridente
+#: model:crm.tracking.source,name:tridente.crm_tracking_source_3
+msgid "Email info@tridente"
+msgstr "Email info@tridente"
+
+#. module: tridente
+#: model:crm.tracking.source,name:tridente.crm_tracking_source_5
+msgid "Email sms@tridente"
+msgstr "Email sms@tridente"
+
+#. module: tridente
+#: help:tr.parameters,interface_csv_inicial_load:0
+msgid "Enable interface with csv files for inicial load information"
+msgstr "Enable interface with csv files for inicial load information"
+
+#. module: tridente
+#: model:ir.ui.menu,name:tridente.menu_tr_parameters
+msgid "Especial Parameters Tridente"
+msgstr "Parametros Especiales Tridente"
+
+#. module: tridente
+#: view:tr.ferias:tridente.tridente_ferias_form_view
+msgid "Fair"
+msgstr "Feria"
+
+#. module: tridente
+#: field:res.partner,freria_ids:0
+msgid "Fair Description"
+msgstr "Descripcion Ferias"
+
+#. module: tridente
+#: field:tr.ferias,f_descripcion:0
+msgid "Fair description"
+msgstr "Descripcion Feria"
+
+#. module: tridente
+#: model:ir.actions.act_window,name:tridente.ferias_action
+#: view:res.partner:tridente.grupo_tridente_partner_form
+#: view:res.partner:tridente.grupo_tridente_partner_search
+#: view:tr.ferias:tridente.tridente_ferias_tree_view
+msgid "Fairs"
+msgstr "Ferias"
+
+#. module: tridente
+#: model:crm.tracking.source,name:tridente.crm_tracking_source_6
+msgid "Ferias y Congresos"
+msgstr "Ferias y Congresos"
+
+#. module: tridente
+#: view:res.partner:tridente.grupo_tridente_partner_search
+#: field:res.partner,montador:0
+msgid "Furniture assembler"
+msgstr "Montador"
+
+#. module: tridente
+#: view:crm.lead:tridente.grupo_tridente_oppor_filter
+#: view:res.partner:tridente.grupo_tridente_partner_search_2
+#: view:tr.ferias:tridente.tridente_ferias_search
+#: view:tr.product_crm:tridente.tridente_productos_crm_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: tridente
+#: model:ir.module.category,name:tridente.category_grupo_tridente
+msgid "Grupo tridente"
+msgstr "Grupo tridente"
+
+#. module: tridente
+#: field:tr.ferias,id:0
+#: field:tr.ferias_abc,id:0
+#: field:tr.parameters,id:0
+#: field:tr.product_crm,id:0
+#: field:tr.sector,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: tridente
+#: field:tr.parameters,input_ruta_inicial_load:0
+msgid "Input route  file"
+msgstr "Ruta Entrada de Fichero"
+
+#. module: tridente
+#: field:tr.parameters,interface_csv_inicial_load:0
+msgid "Interface with csv files"
+msgstr "Interface con ficheros csv"
+
+#. module: tridente
+#: selection:res.partner,tipo_ferias_asiste:0
+msgid "International"
+msgstr "Internacional"
+
+#. module: tridente
+#: field:tr.ferias,write_uid:0
+#: field:tr.ferias_abc,write_uid:0
+#: field:tr.parameters,write_uid:0
+#: field:tr.product_crm,write_uid:0
+#: field:tr.sector,write_uid:0
+msgid "Last Updated by"
+msgstr "Ultima actualizacion por"
+
+#. module: tridente
+#: field:tr.ferias,write_date:0
+#: field:tr.ferias_abc,write_date:0
+#: field:tr.parameters,write_date:0
+#: field:tr.product_crm,write_date:0
+#: field:tr.sector,write_date:0
+msgid "Last Updated on"
+msgstr "Ultima Actualizacion en "
+
+#. module: tridente
+#: model:ir.ui.menu,name:tridente.menu_tr_crm_products
+msgid "List of crm Produts"
+msgstr "Lista de productos crm"
+
+#. module: tridente
+#: model:ir.ui.menu,name:tridente.menu_tr_ferias
+msgid "List of fairs"
+msgstr "Lista de Ferias"
+
+#. module: tridente
+#: model:crm.tracking.source,name:tridente.crm_tracking_source_7
+msgid "Llamada cliente"
+msgstr "Llamada cliente"
+
+#. module: tridente
+#: model:res.groups,name:tridente.group_tridente_crm
+msgid "Marketing"
+msgstr "Marketing"
+
+#. module: tridente
+#: selection:res.partner,tipo_ferias_asiste:0
+msgid "National"
+msgstr "Nacional"
+
+#. module: tridente
+#: view:crm.lead:tridente.grupo_tridente_oppor_filter
+msgid "Next Action"
+msgstr "Proxima Accion"
+
+#. module: tridente
+#: selection:res.partner,tipo_ferias_asiste:0
+#: selection:res.partner,tipo_prospector:0
+msgid "Others"
+msgstr "Otros"
+
+#. module: tridente
+#: model:crm.tracking.source,name:tridente.crm_tracking_source_8
+msgid "Otros"
+msgstr "Otros"
+
+#. module: tridente
+#: field:tr.parameters,par_name:0
+msgid "Paramener Name"
+msgstr "Normbre parametro"
+
+#. module: tridente
+#: model:ir.actions.act_window,name:tridente.tr_action_parameters
+#: view:tr.parameters:tridente.tridente_parameters_form_view
+#: view:tr.parameters:tridente.tridente_parameters_tree_view
+msgid "Parameters"
+msgstr "Parametros"
+
+#. module: tridente
+#: view:tr.parameters:tridente.tridente_parameters_form_view
+msgid "Parameters Contract Management SMS"
+msgstr "Parameters Contract Management SMS"
+
+#. module: tridente
+#: view:crm.lead:tridente.grupo_tridente_oppor_filter
+#: model:ir.model,name:tridente.model_res_partner
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: tridente
+#: help:tr.parameters,input_ruta_inicial_load:0
+msgid "Path or folder where where you should read the files to be processed.csv"
+msgstr "Path or folder where where you should read the files to be processed.csv"
+
+#. module: tridente
+#: model:ir.actions.act_window,name:tridente.productos_crm_action
+#: view:tr.product_crm:tridente.tridente_productos_crm_tree_view
+msgid "Poducts_crm"
+msgstr "Poductos crm"
+
+#. module: tridente
+#: view:tr.product_crm:tridente.tridente_productos_crm_search
+msgid "Poducts_crm search"
+msgstr "Busqueda Poductos crm"
+
+#. module: tridente
+#: selection:res.partner,tipo_prospector:0
+msgid "Potencial"
+msgstr "Potencial"
+
+#. module: tridente
+#: field:res.partner,product_crm_ids:0
+msgid "Product CRM Description"
+msgstr "Descripcion Productos CRM"
+
+#. module: tridente
+#: view:res.partner:tridente.grupo_tridente_partner_form
+msgid "Products"
+msgstr "Productos"
+
+#. module: tridente
+#: view:res.partner:tridente.grupo_tridente_partner_search
+msgid "Products CRM"
+msgstr "Productos CRM"
+
+#. module: tridente
+#: view:res.partner:tridente.grupo_tridente_partner_search
+#: field:res.partner,prospector:0
+msgid "Prospector"
+msgstr "Potencial"
+
+#. module: tridente
+#: model:crm.tracking.source,name:tridente.crm_tracking_source_9
+msgid "Referencia blog o red social"
+msgstr "Referencia blog o red social"
+
+#. module: tridente
+#: model:crm.tracking.source,name:tridente.crm_tracking_source_10
+msgid "Referencia empleado"
+msgstr "Referencia empleado"
+
+#. module: tridente
+#: view:tr.parameters:tridente.tridente_parameters_form_view
+msgid "Run Now"
+msgstr "Ejecutar ahora"
+
+#. module: tridente
+#: view:res.partner:tridente.grupo_tridente_partner_search
+#: field:res.partner,vendedor:0
+msgid "Salesman"
+msgstr "Vendedor"
+
+#. module: tridente
+#: field:res.partner,sector_id:0
+msgid "Sector"
+msgstr "Sector"
+
+#. module: tridente
+#: field:tr.sector,s_descripcion:0
+msgid "Sector description"
+msgstr "Descripcion Sector"
+
+#. module: tridente
+#: view:crm.lead:tridente.grupo_tridente_oppor_filter
+msgid "State type"
+msgstr "Tipo Estado"
+
+#. module: tridente
+#: view:res.partner:tridente.grupo_tridente_partner_search
+msgid "Suppliers"
+msgstr "Proveedores"
+
+#. module: tridente
+#: view:res.partner:tridente.grupo_tridente_partner_search_2
+#: field:res.partner,ferias_abc_id:0
+#: field:tr.ferias_abc,abc_descripcion:0
+msgid "Trade fairs"
+msgstr "Clasificacion de Ferias"
+
+#. module: tridente
+#: view:res.partner:tridente.grupo_tridente_partner_search_2
+#: field:res.partner,tipo_prospector:0
+msgid "Type Prospector"
+msgstr "Tipo de Cliente"
+
+#. module: tridente
+#: view:res.partner:tridente.grupo_tridente_partner_search_2
+#: field:res.partner,tipo_ferias_asiste:0
+msgid "Type of fairs"
+msgstr "Tipo de ferias"
+
+#. module: tridente
+#: model:res.groups,name:tridente.group_tridente_user
+msgid "Usuario"
+msgstr "Usuario"
+
+#. module: tridente
+#: model:res.groups,name:tridente.group_tridente_sales
+msgid "Vendedor"
+msgstr "Vendedor"
+
+#. module: tridente
+#: field:tr.parameters,name_file_crm:0
+msgid "crm"
+msgstr "crm"
+
+#. module: tridente
+#: view:tr.ferias:tridente.tridente_ferias_search
+msgid "fairs search"
+msgstr "Busqueda de ferias"
+
+#. module: tridente
+#: selection:res.partner,tipo_prospector:0
+msgid "in portfolio"
+msgstr "En cartera"
+
+#. module: tridente
+#: view:tr.parameters:tridente.tridente_parameters_form_view
+msgid "par00"
+msgstr "par00"
+
+#. module: tridente
+#: field:tr.product_crm,p_descripcion:0
+msgid "product description crm"
+msgstr "Descripcion producto crm"
+
+#. module: tridente
+#: view:tr.product_crm:tridente.tridente_productos_crm_form_view
+msgid "product_crm"
+msgstr "producto crm"
+
+#. module: tridente
+#: view:res.partner:tridente.grupo_tridente_partner_search_2
+msgid "sector"
+msgstr "sector"
+

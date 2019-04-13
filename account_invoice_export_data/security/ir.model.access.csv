@@ -1,0 +1,4 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_invoice_export_data","access_invoice_export_data_manager","model_invoice_leader_export","account.group_account_manager",1,1,1,1
+"access_invoice_line_export_data","access_invoice_line_export_data_manager","model_invoice_line_leader_export","account.group_account_manager",1,1,1,1
+"access_compras_export_data","access_compras_export_data_manager","model_in_invoice_leader_export","account.group_account_manager",1,1,1,1

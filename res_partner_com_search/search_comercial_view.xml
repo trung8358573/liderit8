@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+      #ampliamos las busquedas de res partner para permitir buscar por nombre comercial de empresa (comercial)
+  	 	<record id="res_filter_by_commercial" model="ir.ui.view">
+            <field name="name">partner.comercial.search</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_res_partner_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search/field[@name='parent_id']" position="after">
+                    <field name="comercial" filter_domain="[('comercial','ilike',self)]" string="Nombre Comercial"/>
+                </xpath>
+            </field>
+        </record>
+
+      #ampliamos las busquedas de sale order para permitir buscar por pais del cliente
+      <record id="sale_order_filter_by_country" model="ir.ui.view">
+            <field name="name">sale.order.country.search</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search/field[@name='partner_id']" position="after">
+                    <field name="name" string="Pais" filter_domain="[('partner_id.country_id.name','ilike',self)]"/>
+                </xpath>
+            </field>
+        </record>
+
+      #ampliamos las busquedas de sale order para permitir buscar por pais del cliente en informes de ventas
+      <record id="sale_report_filter_by_country" model="ir.ui.view">
+            <field name="name">sale.report.country.search</field>
+            <field name="model">sale.report</field>
+            <field name="inherit_id" ref="sale.view_order_product_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search/field[@name='partner_id']" position="after">
+                    <field name="partner_id" string="Pais" filter_domain="[('partner_id.country_id.name','ilike',self)]"/>
+                </xpath>
+            </field>
+        </record>
+
+
+  </data>
+</openerp>

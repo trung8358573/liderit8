@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="tercap_crm_case_form_view">
+            <field name="name">tercap.crm.case.form</field>
+            <field name="model">crm.case.section</field>
+            <field name="inherit_id" ref="sales_team.crm_case_section_view_form" />
+            <field name="arch" type="xml">
+              <xpath expr="//field[@name='change_responsible']" position="before">
+                     <field name="tercap_permitircambioprecio" />
+              </xpath>
+            </field>
+        </record>
+
+      <!--=======================  view tree de presupuestos  / direccion de entrega ===============================================================================-->  
+        <record model="ir.ui.view" id="tercap_group_shipping_view">
+            <field name="name">tercap.group.shipping.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter" />
+            <field name="arch" type="xml">
+              <group string="Group By" position="inside">
+                  <filter string="Cliente de Envio" context="{'group_by':'partner_shipping_id'}"/>               
+              </group>
+            </field>
+        </record>
+
+       <!--=======================  view form de presupuestos  / domain de direcciones ===============================================================================-->  
+        <record model="ir.ui.view" id="tercap_sale_partner_form_view">
+            <field name="name">tercap.sale.partner.form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form" />
+            <field name="arch" type="xml">
+              <xpath expr="//field[@name='partner_shipping_id']" position="attributes">
+                  <attribute name="domain">['|',('parent_id', '=', partner_id),('id', '=', partner_id)]</attribute>
+              </xpath>
+              <xpath expr="//field[@name='partner_invoice_id']" position="attributes">
+                  <attribute name="domain">['|',('parent_id', '=', partner_id),('id', '=', partner_id)]</attribute>
+              </xpath>
+            </field>
+        </record>
+
+        
+    </data>
+</openerp>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+	<!--=========================================================================== Vista form ======================================================================================= -->
+	 	<record model="ir.ui.view" id="tercap_conf_export_form_view">
+            <field name="name">tercap.conf_export.form</field>
+            <field name="model">export.control</field>
+            <field name="type">form</field>
+            <field name="priority" eval="80"/>
+            <field name="arch" type="xml">
+                <form string="configuracion Exportaciones">
+                	<group col="4" colspan="4" >
+					<field name="clientes_71"/>	
+					<field name="direcciones_72"/>
+					<field name="productos_73"/>
+					<field name="envases_74"/>	
+					<field name="iva_75"/>		
+					<field name="tarifas_76"/>	
+					<field name="formas_pago_77"/>	
+					<field name="cobros_pendientes_78"/>	
+					<field name="descuentos_cliente_producto_79"/>	
+					<field name="promociones_710"/>
+					<field name="obsequios_711"/>
+					<field name="promociones_producto_712"/>
+					<field name="obsequios_producto_713"/>
+					<field name="cabeceras_pedido_reparto_714"/>
+					<field name="lineas_pedido_reparto_715"/>
+					<field name="rutero_716"/>
+					<field name="motivos_visita_negativa_717"/>
+					<field name="material_cliente_718"/>
+					<field name="cliente_proveedor_719"/>
+					<field name="proveedor_720"/>
+					<field name="rutas_721"/>
+					<field name="vendedores_722"/>
+					<field name="productos_exclusivos_723"/>
+					<field name="cabeceras_carga_mercancia_724"/>
+					<field name="lineas_carga_mercancia_725"/>					
+			</group> 
+	            </form>
+            </field>
+        </record>
+		<!--=========================================================================== Vista tree ======================================================================================= -->
+		<record model="ir.ui.view" id="tercap_conf_export_tree_view">
+            <field name="name">tercap.conf_export.lista</field>
+            <field name="model">export.control</field>
+            <field name="type">tree</field>
+             <field name="priority" eval="80"/>
+            <field name="arch" type="xml">
+                <tree toolbar="1"  string="configuracion Exportaciones">
+                	<field name="clientes_71"/>	
+                </tree>
+            </field>
+        </record>  
+		<!--=========================================================================== Acciones======================================================================================= -->
+        <record model="ir.actions.act_window" id="tercap_action_conf_export">
+            <field name="name">configuracion Exportaciones</field>
+            <field name="res_model">export.control</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="tercap_conf_export_form_view"/>
+        </record>  
+	</data>
+</openerp>

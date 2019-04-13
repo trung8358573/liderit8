@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+  <data>
+
+      #ampliamos los filtros para permitir buscar PEDIDOS de un dia
+      <record id="sale_order_day_filter" model="ir.ui.view">
+            <field name="name">sale.order.dayfilter.search</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_sales_order_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <filter string="Ayer" domain="[('date_order','&gt;=', ((context_today()-datetime.timedelta(days=1)).strftime('%Y-%m-%d'))), ('date_order','&lt;=', ((context_today()-datetime.timedelta(days=1)).strftime('%Y-%m-%d')))]"/>
+                    <!--,(context_today().weekday(),'&lt;=',2)-->
+                    <filter icon="terp-document-new" string="Pasado Viernes" name="flastfriday" 
+domain="[('date_order','&gt;=',((context_today() 
++relativedelta(weeks=-2, days=5, weekday=4)).strftime('%Y-%m-%d'))),
+  ('date_order','&lt;=',((context_today() 
++relativedelta(weeks=-2, days=5, weekday=4)).strftime('%Y-%m-%d')))]"
+/>
+
+
+                    <filter string="Hoy"  name="Today" separator="1"
+                         domain="[('date_order','&gt;=', ((context_today()-datetime.timedelta(days=0)).strftime('%Y-%m-%d'))), ('date_order','&lt;=', ((context_today()+datetime.timedelta(days=0)).strftime('%Y-%m-%d')))]"/>
+                    <filter string="Ultima semana"  name="This Week" separator="1"
+                         domain="[('date_order','&lt;=', ((context_today()).strftime('%Y-%m-%d'))), ('date_order','&gt;=', ((context_today()-datetime.timedelta(days=7)).strftime('%Y-%m-%d')))]"/>
+
+                </xpath>
+            </field>
+        </record>
+
+        #ampliamos los filtros para permitir buscar ALBARANES de un dia por fecha prevista
+        <record id="stock_picking_day_filter" model="ir.ui.view">
+            <field name="name">stock.picking.dayfilter.search</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_internal_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <filter string="Ayer" domain="[('min_date','&gt;=', ((context_today()-datetime.timedelta(days=1)).strftime('%Y-%m-%d'))), ('min_date','&lt;=', ((context_today()-datetime.timedelta(days=1)).strftime('%Y-%m-%d')))]"/>
+                     <filter string="Hoy"  name="Today" separator="1"
+                         domain="[('min_date','&gt;=', ((context_today()-datetime.timedelta(days=0)).strftime('%Y-%m-%d'))), ('min_date','&lt;=', ((context_today()+datetime.timedelta(days=0)).strftime('%Y-%m-%d')))]"/>
+                     <filter string="Ultima semana"  name="This Week" separator="1"
+                         domain="[('min_date','&lt;=', ((context_today()).strftime('%Y-%m-%d'))), ('min_date','&gt;=', ((context_today()-datetime.timedelta(days=7)).strftime('%Y-%m-%d')))]"/>
+                </xpath>
+            </field>
+        </record>
+
+        #ampliamos los filtros para permitir buscar FACTURAS de un dia
+        <record id="account_invoice_day_filter" model="ir.ui.view">
+            <field name="name">account.invoice.dayfilter.search</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//search" position="inside">
+                    <filter string="Ayer" domain="[('date_invoice','&gt;=', ((context_today()-datetime.timedelta(days=1)).strftime('%Y-%m-%d'))), ('date_invoice','&lt;=', ((context_today()-datetime.timedelta(days=1)).strftime('%Y-%m-%d')))]"/>
+                     <filter string="Hoy"  name="Today" separator="1"
+                         domain="[('date_invoice','&gt;=', ((context_today()-datetime.timedelta(days=0)).strftime('%Y-%m-%d'))), ('date_invoice','&lt;=', ((context_today()+datetime.timedelta(days=0)).strftime('%Y-%m-%d')))]"/>
+                     <filter string="Ultima semana"  name="This Week" separator="1"
+                         domain="[('date_invoice','&lt;=', ((context_today()).strftime('%Y-%m-%d'))), ('date_invoice','&gt;=', ((context_today()-datetime.timedelta(days=7)).strftime('%Y-%m-%d')))]"/>
+                </xpath>
+            </field>
+        </record>
+
+  </data>
+</openerp>

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <record id="generate_importa_view_tercap" model="ir.ui.view">
+      <field name="name">Import a TERCAP </field>
+      <field name="model">import.control</field>
+      <field name="arch" type="xml">
+      <form string="Import to Odoo">
+ 				<!-- <header>
+     				<button class="oe_right oe_stat_button" icon="fa-pencil-square-o" name="srcen_exportar" string="Exportar Ahora" type="object" widget="statinfo"  colspan="3"/>
+				</header> -->
+   			<separator string="Esta acción le permite parametrizar e importar datos de TERCAP a Odoo"/>
+  
+  			<group col="4" colspan="4" >
+					<field name="cabecera_81"/>	
+					<field name="lineas_82"/>
+					<field name="cobros_83"/>
+					<field name="cliente_nuevo_84"/>	
+			</group> 
+  
+	        <footer >		         
+		         <button name="srcen_importa" string="Importar Ahora" type="object" class="oe_highlight"/>
+		         <button special="cancel" string="Descartar" type="object"/>
+	        </footer>
+	
+      </form>
+      </field>
+    </record>
+    <!--=========================================================================== Vista tree ======================================================================================= -->
+	<record model="ir.ui.view" id="generate_importa_view_tercap_tree">
+            <field name="name">Impot a Odoo tree</field>
+            <field name="model">import.control</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree toolbar="1"  string="Importa to Odoo ">
+                	<field name="cabecera_81"	string="Seleccionar Ficheros a Importar" />	
+                </tree>
+            </field>
+    </record>  
+    
+    <record id="tercap_import_control" model="ir.actions.act_window">
+      <field name="name">Importa  datos a Odoo </field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">import.control</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">tree,form</field>
+      <field name="target">new</field>
+    </record>
+
+
+
+<!-- =====================8-2-16 Manuel. Nuevos SubMenu de importacion ==================== -->
+<!-- =============== Vistas de DIRECTORIOS   ============================== -->
+
+    <!-- vista form de los directorios de ficheros para configuracion -->
+
+    <record model="ir.ui.view" id="view_routes_form">
+        <field name="name">view.routes.form</field>
+        <field name="model">tercap.route</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Directorio ficheros TERCAP">
+              <group col="4">
+                <group colspan="2">
+                  <field name="name" placeholder="En windows usar '\' enlugar de '/' Ej. C:\Directorio\Fichero"/>
+                  <field name="alcance"/>
+                  <field name="enmays"/>
+                  <field name="inv_nombres"/>
+                  <field name="cif_partner"/>
+                  <field name="todo_pedidos"/>
+                  <field name="pedido_borrador"/>
+                  <field name="product_default_idcode"/>
+                  <field name="unico_numero"/>
+                  <field name="saldo_cobrables"/>
+                  <field name="solo_unidades"/>
+                  <field name="gestion_descanso"/>
+                  <field name="num_relleno"/>
+                </group>
+                <group colspan="2">
+                  <button string="Actualizar ficheros de este directorio" type="object" name="nuevos_to_import"/>
+                </group>
+              </group>
+            </form>
+        </field>
+    </record>
+    <!-- vista lista de los directorios de ficheros para configuracion-->
+    <record model="ir.ui.view" id="view_routes_tree">
+        <field name="name">view.routes.tree</field>
+        <field name="model">tercap.route</field>
+        <field name="arch" type="xml">
+            <tree string="Directorios para import/export TERCAP">
+              <field name="name"/>
+              <field name="alcance"/>
+            </tree>
+        </field>
+    </record>
+    <!-- vista search de los directorios de ficheros para configuracion-->
+    <record id="routes_search_view" model="ir.ui.view">
+        <field name="name">routes.search.view</field>
+        <field name="model">tercap.route</field>
+        <field name="arch" type="xml">
+            <search string="Directorios">
+              <filter string="Directorio importar" name="alcance_import" icon="terp-accessories-archiver" domain="[('alcance','=','import')]"/>
+              <filter string="Directorio exportar" name="alcance_export" icon="terp-accessories-archiver" domain="[('alcance','=','export')]"/>
+              <separator/>
+              <field name="alcance"/>
+
+              <group  expand='0' string='Group by...'>
+                  <filter string='Alcance' domain="[]" context="{'group_by' : 'alcance'}"/>
+              </group>
+            </search>
+        </field>
+      </record>
+
+    <!-- action de los directorios de ficheros para configuracion -->
+        <record model="ir.actions.act_window" id="view_routes_action">
+            <field name="name">Directorios de TERCAP</field>
+            <field name="res_model">tercap.route</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="routes_search_view"/>
+            <field name='view_id' ref='view_routes_tree'/>
+        </record>
+
+
+<!-- =============== Vistas de FICHEROS   ============================== -->
+    <!-- vista form de ficheros a importar -->
+        <record model="ir.ui.view" id="view_files_form">
+        <field name="name">view.files.form</field>
+        <field name="model">tercap_files</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Ficheros TERCAP a importar">
+              <group>
+                <field name="name" readonly="True"/>
+                <field name="fecha" readonly="True"/>
+                <field name="hora" readonly="True"/>
+                <field name="tipo" readonly="True"/>
+                <field name="route_id" readonly="True"/>
+                <field name="traspasado" readonly="True"/>
+                <field name="descartado"/>
+                <button string="Cargar este fichero" type="object" name="action_files_import"/>
+              </group>
+        </form>
+        </field>
+    </record>
+    <!-- vista lista de ficheros a importar -->
+    <record model="ir.ui.view" id="view_files_tree">
+        <field name="name">view.files.tree</field>
+        <field name="model">tercap_files</field>
+        <field name="arch" type="xml">
+            <tree string="Ficheros TERCAP a importar">
+                    <field name="name" readonly="True"/>
+                    <field name="fecha" readonly="True"/>
+                    <field name="hora" readonly="True"/>
+                    <field name="tipo" readonly="True"/>
+                    <field name="route_id" readonly="True"/>
+                    <field name="traspasado" readonly="True"/>
+                    <field name="descartado" readonly="True"/>
+                    <field name="lista_files" invisible="1"/>
+                </tree>
+        </field>
+    </record>
+    <!-- vista search de los ficheros A importar-->
+    <record id="files_search_view" model="ir.ui.view">
+        <field name="name">files.search.view</field>
+        <field name="model">tercap_files</field>
+        <field name="arch" type="xml">
+            <search string="Ficheros">
+
+              <filter string="Sin Cargar" name="files_no_trasf" icon="terp-accessories-archiver" domain="[('traspasado','=', 0)]"/>
+              <filter string="No Descartados" name="files_no_discard" icon="terp-accessories-archiver" domain="[('descartado','=', 0)]"/>
+              <filter string="Sin Cargar ni descartar" name="files_no_trasf_discard" icon="terp-accessories-archiver" domain="[('traspasado','=', 0),('descartado','=', 0)]"/>
+              <filter string="Cargados" name="files_trasf" icon="terp-accessories-archiver" domain="[('traspasado','=', 1)]"/>
+              <filter string="Descartados" name="files_discard" icon="terp-accessories-archiver" domain="[('descartado','=', 1)]"/>
+
+              <separator/>
+              <field name="route_id"/>
+              <field name="fecha"/>
+              <field name="tipo"/>
+
+              <group  expand='0' string='Group by...'>
+                  <filter string='Directorio' domain="[]" context="{'group_by' : 'route_id'}"/>
+                  <filter string='Tipo' name="g_by_type" domain="[]" context="{'group_by' : 'tipo'}"/>
+                  <filter string='Fecha' domain="[]" context="{'group_by' : 'fecha'}"/>
+              </group>
+            </search>
+        </field>
+      </record>
+
+    <!-- action de ficheros a importar -->
+        <record model="ir.actions.act_window" id="view_files_action">
+            <field name="name">Importacion TERCAP</field>
+            <field name="res_model">tercap_files</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <!--campo para poner un dominio no filtrable por defecto a todos los usuarios-->
+            <!--field name="domain">[('traspasado', '=', False)]</field-->
+            <!--campo para poner un filtro por defecto a todos los usuarios llamando al filter del search por su name-->
+            <field name="context">{"search_default_files_no_trasf_discard":1, "search_default_g_by_type": 1}</field>
+            <field name='view_id' ref='view_files_tree'/>
+        </record>
+
+
+<!-- =============== BOTON MAS EN FORM TREE DE FICHEROS  ============================== -->
+
+    <!-- accion para el nuevo item en boton mas -->
+
+<!--
+        Otro codigo de Chema
+    <record id="action_id_name" model="ir.actions.server">
+      <field name="name">Name that shows in More button</field>
+      <field name="type">ir.actions.server</field>
+      <field name="model_id" ref="model_blah_blah"/>
+      <field name="state">code</field>
+      <field name="code">self.some_custom_code(cr, uid, context.get('active_ids'), ..., context=context)</field>
+    </record>
+  -->
+  
+    <record id="tercap_files_import_item_action" model="ir.actions.server">
+        <field name="name">Cargar Datos</field>
+        <field name="type">ir.actions.server</field>
+        <!--en esta ref hay que poner model_nombre_del_modelo o model_nombre.del.modelo segun el _name del py-->
+        <field name="model_id" ref="model_tercap_files"/>
+        <field name="state">code</field>
+        <field name="code">action = self.action_files_import(cr, uid, context.get('active_ids', []), context=context)</field>
+    </record>
+
+    <record id="tercap_files_discard_action" model="ir.actions.server">
+        <field name="name">Descartar Fichero</field>
+        <field name="type">ir.actions.server</field>
+        <!--en esta ref hay que poner model_nombre_del_modelo o model_nombre.del.modelo segun el _name del py-->
+        <field name="model_id" ref="model_tercap_files"/>
+        <field name="state">code</field>
+        <field name="code">action = self.action_files_discard(cr, uid, context.get('active_ids', []), context=context)</field>
+    </record>
+
+    <!-- nuevo item para el boton mas -->
+
+    <record id="tercap_files_import_item_value" model="ir.values">
+        <field name="name">Cargar Datos</field>
+        <field name="action_id" ref="tercap_files_import_item_action"/>
+        <field name="key" >action</field>
+        <field name="key2">client_action_multi</field>
+        <field name="model" eval="'tercap_files'"/>
+        <field name="value" eval="'ir.actions.server,' + str(ref('tercap_files_import_item_action'))"/>
+    </record>
+
+    <record id="tercap_files_discard_value" model="ir.values">
+        <field name="name">Descartar Fichero</field>
+        <field name="action_id" ref="tercap_files_discard_action"/>
+        <field name="key" >action</field>
+        <field name="key2">client_action_multi</field>
+        <field name="model" eval="'tercap_files'"/>
+        <field name="value" eval="'ir.actions.server,' + str(ref('tercap_files_discard_action'))"/>
+    </record>
+
+
+
+
+    <!--================================  journal  inherit  / cobros Tercap ===============================================================================-->      
+       <record model="ir.ui.view" id="tercap_account_journal_form">
+            <field name="name">tercap_account_journal_form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='type']" position="after">
+                    <field name="cobros_tercap" />
+                </xpath>
+            </field>
+        </record>
+
+
+    <!--================================  stock move  inherit  / view partner ===============================================================================-->      
+       <record model="ir.ui.view" id="partner_stock_view_tree">
+            <field name="name">partner_stock_view_tree</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='origin']" position="after">
+                    <field name="partner_id" />
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="partner_stock_search_view">
+            <field name="name">partner_stock_search_view</field>
+            <field name="model">stock.move</field>
+            <field name="inherit_id" ref="stock.view_move_search"/>
+            <field name="arch" type="xml">
+                <group string="Group By" position="inside">
+                    <filter string="Cliente" context="{'group_by':'partner_id'}"/>               
+                </group>
+            </field>
+        </record>
+  
+
+  <!-- =============== BOTON MAS EN FORM TREE DE FACTURAS CLIENTE  ============================== -->
+
+    <!-- accion para el nuevo item en boton mas -->
+
+    <record id="tercap_invoice_payverify_action" model="ir.actions.server">
+        <field name="name">Actualizar saldos</field>
+        <field name="type">ir.actions.server</field>
+        <!--en esta ref hay que poner model_nombre_del_modelo o model_nombre.del.modelo segun el _name del py-->
+        <field name="model_id" ref="model_account_invoice"/>
+        <field name="state">code</field>
+        <field name="code">action = self.action_pago_pedidos(cr, uid, context.get('active_ids', []), context=context)</field>
+    </record>
+
+    <!-- nuevo item para el boton mas -->
+
+    <record id="tercap_invoice_payverify_value" model="ir.values">
+        <field name="name">Actualizar saldos</field>
+        <field name="action_id" ref="tercap_invoice_payverify_action"/>
+        <field name="key" >action</field>
+        <field name="key2">client_action_multi</field>
+        <field name="model" eval="'account.invoice'"/>
+        <field name="value" eval="'ir.actions.server,' + str(ref('tercap_invoice_payverify_action'))"/>
+    </record>
+
+
+
+  </data>
+</openerp>

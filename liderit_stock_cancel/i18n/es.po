@@ -1,0 +1,65 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* liderit_stock_cancel
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-08 17:02+0000\n"
+"PO-Revision-Date: 2019-02-08 18:05+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 1.6.10\n"
+
+#. module: liderit_stock_cancel
+#: view:stock.picking:liderit_stock_cancel.stock_picking_cancel_form
+msgid "Are you sure you want to reopen this picking?"
+msgstr "¿Está seguro de recuperar este albarán?"
+
+#. module: liderit_stock_cancel
+#: code:addons/liderit_stock_cancel/stock.py:69
+#, python-format
+msgid "Picking %s has invoices!"
+msgstr "El albarán %s tiene facturas!"
+
+#. module: liderit_stock_cancel
+#: code:addons/liderit_stock_cancel/stock.py:64
+#, python-format
+msgid "Picking %s has valuation moves: remove them first."
+msgstr "El albarán %s tiene movimientos registrados: no se puede recuperar."
+
+#. module: liderit_stock_cancel
+#: code:addons/liderit_stock_cancel/stock.py:52
+#, python-format
+msgid "Picking %s is not incoming. Only valid in incoming pickings."
+msgstr ""
+"Este albarán %s no es de entrada. Sólo se pueden recuperar albaranes de "
+"entrada."
+
+#. module: liderit_stock_cancel
+#: code:addons/liderit_stock_cancel/stock.py:58
+#, python-format
+msgid "Picking %s is not reverted: revert it first."
+msgstr "El albarán %s no ha sido revertido: registre la devolución primero."
+
+#. module: liderit_stock_cancel
+#: model:ir.model,name:liderit_stock_cancel.model_stock_picking
+msgid "Picking List"
+msgstr "Albarán"
+
+#. module: liderit_stock_cancel
+#: view:stock.picking:liderit_stock_cancel.stock_picking_cancel_form
+msgid "Reopen"
+msgstr "Recuperar"
+
+#. module: liderit_stock_cancel
+#: code:addons/liderit_stock_cancel/stock.py:80
+#, python-format
+msgid "The picking has been re-opened and set to draft state"
+msgstr "El albarán se ha recuperado a estado borrador"

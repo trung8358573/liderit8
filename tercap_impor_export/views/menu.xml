@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>        
+    <!-- <menuitem 
+    	id="menu_generate_export" 
+    	name="Exports" 
+    	parent="account.menu_finance" 
+    	sequence="3"/>
+    <menuitem 
+    	id="menu_generate_export71_TERCP" 
+    	name="Exportacion  a TERCAP" 
+    	parent="menu_generate_export" 
+    	action="tercap_expor_control" 
+    	groups="account.group_account_user"/> -->
+	
+	<!--                   -->
+	<menuitem 
+	 	id="tercap_expor_import"
+		name="Tercap Export/Import"
+        parent="base.menu_base_partner" 
+        sequence="9"/>
+  
+	<menuitem 
+    	id="tercap_rutas" 
+    	name="Gestion de Rutas" 
+    	parent="tercap_expor_import" 
+    	action="tercap_action_rutas"
+        sequence="5"
+    	 />
+  <!--   <menuitem 
+    	id="tercap_rutero" 
+    	name="Gestion de agenda rutas" 
+    	parent="tercap_expor_import" 
+    	action="tercap_action_rutero"
+    	/>  -->
+	<menuitem 
+    	id="tercap_exportar" 
+    	name="Exportacion  a TERCAP" 
+    	parent="tercap_expor_import"
+    	action="tercap_expor_control"
+        sequence="10" 
+        />
+
+<!--  8-2-16. Manuel: Detengo para modificar el menu de importacion
+	<menuitem 
+    	id="tercap_importar" 
+    	name="Importacion  a Odoo" 
+    	parent="tercap_expor_import"
+    	action="tercap_import_control" 
+    	/>
+	-->
+
+    <!-- 8-2-16 Manuel. Agrego este SUBmenu de las rutas de ficheros a importar (menu_tercap_files) -->         
+    <menuitem 
+        id="menu_routes_import"
+        action="view_routes_action" 
+        parent="tercap_expor_import"
+        sequence="15"/>
+	
+
+    <menuitem
+        id="menu_tercap_import"
+        action="view_files_action" 
+        parent="tercap_expor_import"
+        sequence="20"/>
+
+    <!-- FIN NUEVOS SUBMENUS -->
+
+
+	<menuitem 
+	 	id="tercap_config"
+		name="Tercap Configuracion"
+        parent="base.menu_sale_config"
+        sequence="8"/>
+
+	<menuitem 
+	 	id="tercap_conf_export"
+		name="Conf.Exportacion"
+        parent="tercap_config"
+        action="tercap_action_conf_export"/>
+    <menuitem 
+	 	id="tercap_conf_import"
+		name="Conf.Importacion"
+        parent="tercap_config"
+        action="tercap_action_conf_import"/> 
+        
+        
+	
+	
+	</data>
+</openerp>      

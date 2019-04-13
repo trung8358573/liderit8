@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="sale_order_barcode_view_form" model="ir.ui.view">
+            <field name="name">Sale Order Barcode Form</field>
+            <field name="model">sale.order.barcode</field>
+            <field name="arch"  type="xml">
+                <form string="Sale Order Barcode Wizard">
+                    <group name="product">
+                        <field name="product_barcode"/>
+                        <field name="product_id" options='{"no_open": True}'/>
+                        <label for="product_qty"/>
+                        <div>
+                            <field name="product_qty" class="oe_inline"/>
+                            <field name="product_uom_id" options='{"no_open": True}' class="oe_inline"/>
+                        </div>
+                        <field name="type"/>
+                    </group>
+                    <footer>
+                        <button name="save" type="object"
+                            class="oe_highlight" string="Save &amp; New"/>
+                            or
+                        <button special="cancel" string="Cancel" class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="sale_order_barcode_action" model="ir.actions.act_window">
+            <field name="name">Sale Order Barcode Interface</field>
+            <field name="res_model">sale.order.barcode</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+    </data>
+</openerp>

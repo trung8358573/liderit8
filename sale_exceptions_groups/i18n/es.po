@@ -1,0 +1,47 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* sale_exceptions_groups
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0-20150909\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-04 06:09+0000\n"
+"PO-Revision-Date: 2018-06-04 06:09+0003\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sale_exceptions_groups
+#: model:ir.model,name:sale_exceptions_groups.model_res_groups
+msgid "Access Groups"
+msgstr "Grupos de acceso"
+
+#. module: sale_exceptions_groups
+#: field:res.groups,groups_exception_ids:0
+msgid "Exceptions"
+msgstr "Excepciones"
+
+#. module: sale_exceptions_groups
+#: field:sale.exception,groups_ids:0
+msgid "Groups"
+msgstr "Grupos"
+
+#. module: sale_exceptions_groups
+#: view:sale.exception:sale_exceptions_groups.view_sale_exception_groups_form
+msgid "Groups of users exceptions"
+msgstr "Grupos de usuarios con excepciones en la regla"
+
+#. module: sale_exceptions_groups
+#: model:ir.model,name:sale_exceptions_groups.model_sale_exception
+msgid "Sale Exceptions"
+msgstr "Excepciones Venta"
+
+#. module: sale_exceptions_groups
+#: model:ir.model,name:sale_exceptions_groups.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+

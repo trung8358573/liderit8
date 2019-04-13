@@ -1,0 +1,47 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* liderit_sale_order_line_minprice
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-16 15:24+0000\n"
+"PO-Revision-Date: 2017-03-16 16:29+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 1.6.10\n"
+
+#. module: liderit_sale_order_line_minprice
+#: field:product.template,min_price:0
+msgid "Min Price"
+msgstr "Precio mínimo"
+
+#. module: liderit_sale_order_line_minprice
+#: model:sale.exception,name:liderit_sale_order_line_minprice.minprice_restriction
+msgid "Min Price Restriction"
+msgstr "Restricción de Precio Mínimo"
+
+#. module: liderit_sale_order_line_minprice
+#: model:ir.model,name:liderit_sale_order_line_minprice.model_product_template
+msgid "Product Template"
+msgstr "Producto"
+
+#. module: liderit_sale_order_line_minprice
+#: model:ir.model,name:liderit_sale_order_line_minprice.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Línea pedido de venta"
+
+#. module: liderit_sale_order_line_minprice
+#: model:sale.exception,description:liderit_sale_order_line_minprice.minprice_restriction
+msgid ""
+"You can not use any price minor than min price fixed by product with the "
+"applied discount"
+msgstr ""
+"No puede utilizar un precio neto menor que el fijado como precio mínimo para "
+"el producto"

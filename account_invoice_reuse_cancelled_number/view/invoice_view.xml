@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+        <record model="ir.ui.view" id="wizard_form_view">
+            <field name="name">wizard.form</field>
+            <field name="model">account_invoice_reuse_cancelled_number.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Reuse cancelled invoice number">
+                    Select a cancelled invoice to take its number and its date from.
+                    <group>
+                        <field name="cancelled_invoice_id" string="Select a  cancelled invoice"
+                               widget="selection"
+                               context="{'compute_name': '_get_cancelled_invoice_name'}"/>
+                    </group>
+                    The above number and  date will be removed from the cancelled invoice and assigned to this invoice.
+                    <footer>
+                        <button name="reuse_cancelled_invoice_number" type="object"
+                                string="OK" class="oe_highlight"/>
+                        or
+                        <button special="cancel" string="Cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <act_window id="launch_reuse_cancelled_invoice_wizard"
+                    name="Reuse cancelled invoice number"
+                    src_model="account.invoice"
+                    res_model="account_invoice_reuse_cancelled_number.wizard"
+                    view_mode="form"
+                    target="new"
+                    key2="client_action_multi"/>
+
+        <record model="ir.ui.view" id="account_invoice_form_reuse_number">
+            <field name="name">account.invoice.form.reuse_number</field>
+            <field name="model">account.invoice</field>
+            <field name="inherit_id" ref="account.invoice_form"/>
+            <field name="arch" type="xml">
+                <button name="action_invoice_sent" position="before">
+                    <!--
+                    <button name="%(launch_reuse_cancelled_invoice_wizard)d"
+                            attrs="{'invisible': ['|', '|', ('is_there_cancelled_invoice','=',False),('state','not in',('draft')),('internal_number','!=',False)]}"
+                            string="Reuse cancelled invoice number" type="action"/>
+                    -->
+                    <button name="%(launch_reuse_cancelled_invoice_wizard)d"
+                            attrs="{'invisible': ['|', '|', ('is_there_cancelled_invoice','=',False),('state','not in',('draft')),('number','!=',False)]}"
+                            string="Reuse cancelled invoice number" type="action"/>
+
+                </button>
+                <field name="internal_number" position="replace">
+                    <field name="internal_number" readonly="True"/>
+                    <field name="is_there_cancelled_invoice" invisible="True"/>
+                </field>
+            </field>
+        </record>
+
+</data>
+</openerp>

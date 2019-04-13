@@ -1,0 +1,77 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* pos_select_cashier
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-06-08 10:56+0000\n"
+"PO-Revision-Date: 2017-06-08 10:56+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: pos_select_cashier
+#. openerp-web
+#: code:addons/pos_select_cashier/static/src/xml/pos.xml:75
+#, python-format
+msgid "AC"
+msgstr "AC"
+
+#. module: pos_select_cashier
+#. openerp-web
+#: code:addons/pos_select_cashier/static/src/xml/pos.xml:87
+#, python-format
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: pos_select_cashier
+#: field:res.users,cashier_password:0
+msgid "Cashier Password"
+msgstr "Password de Cajero"
+
+#. module: pos_select_cashier
+#. openerp-web
+#: code:addons/pos_select_cashier/static/src/xml/pos.xml:84
+#, python-format
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: pos_select_cashier
+#: field:pos.config,required_password:0
+msgid "Password Required"
+msgstr "Passwrod necesario"
+
+#. module: pos_select_cashier
+#: help:pos.config,required_password:0
+msgid "Required password when change cashier on POS screen"
+msgstr "Passwrod necesario al cambiar de cajero en el TPV"
+
+#. module: pos_select_cashier
+#: view:pos.config:pos_select_cashier.view_pos_config_form
+msgid "Select Cashier"
+msgstr "Elegir Cajero"
+
+#. module: pos_select_cashier
+#. openerp-web
+#: code:addons/pos_select_cashier/static/src/xml/pos.xml:7
+#, python-format
+msgid "Select cashier"
+msgstr "Elegir Cajero"
+
+#. module: pos_select_cashier
+#: model:ir.model,name:pos_select_cashier.model_res_users
+msgid "Users"
+msgstr "Usuarios"
+
+#. module: pos_select_cashier
+#. openerp-web
+#: code:addons/pos_select_cashier/static/src/js/screens.js:45
+#, python-format
+msgid "password"
+msgstr "password"
+

@@ -1,0 +1,348 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* liderit_aspl_quick_sale
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-11-16 13:27+0000\n"
+"PO-Revision-Date: 2018-11-16 14:34+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 1.6.10\n"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:129
+#, python-format
+msgid "Abono"
+msgstr "Abono"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:229
+#, python-format
+msgid "Add Products"
+msgstr "Añadir Productos"
+
+#. module: liderit_aspl_quick_sale
+#: field:sale.order,barcode:0
+msgid "Barcode"
+msgstr "Código de Barras"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:132
+#, python-format
+msgid "Cambio"
+msgstr "Cambio"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/js/quick_sale.js:439
+#: code:addons/liderit_aspl_quick_sale/static/src/js/quick_sale.js:487
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:228
+#, python-format
+msgid "Close"
+msgstr "Cerrar"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:37
+#, python-format
+msgid "Credit:"
+msgstr "Deuda:"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:17
+#, python-format
+msgid "Customer Name:"
+msgstr "Nombre del Cliente:"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:138
+#, python-format
+msgid "Delete"
+msgstr "Borrar"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:111
+#, python-format
+msgid "Description"
+msgstr "Artículo"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:126
+#, python-format
+msgid "Entregado"
+msgstr "Entregado"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:123
+#, python-format
+msgid "Forecasted Qty."
+msgstr "Uds. Disponibles"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:209
+#, python-format
+msgid "Forecasted Quantity"
+msgstr "Unidades Disponibles"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:105
+#, python-format
+msgid "Image"
+msgstr "Imagen"
+
+#. module: liderit_aspl_quick_sale
+#: help:res.partner,customer_payment_mode_name:0
+msgid "Mode of Payment"
+msgstr "Modo de Pago"
+
+#. module: liderit_aspl_quick_sale
+#: field:res.partner,customer_payment_mode_name:0
+#: field:res.partner,property_payment_term_name:0
+msgid "Name of payment term"
+msgstr "Plazo de pago"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:256
+#, python-format
+msgid "Net Total"
+msgstr "Total Sin IVA"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:81
+#, python-format
+msgid "New Sale Order"
+msgstr "NUEVO"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/js/quick_sale.js:436
+#, python-format
+msgid "No Customer Defined!"
+msgstr "No se ha seleccionado un cliente"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:29
+#, python-format
+msgid "Notes:"
+msgstr "Notas:"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:21
+#, python-format
+msgid "Order Date:"
+msgstr "Fecha Pedido:"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:243
+#, python-format
+msgid "Order Details"
+msgstr "Detalles del Pedido"
+
+#. module: liderit_aspl_quick_sale
+#: model:ir.model,name:liderit_aspl_quick_sale.model_res_partner
+msgid "Partner"
+msgstr "Partner"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:49
+#, python-format
+msgid "Payment Mode:"
+msgstr "Modo de Pago:"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:43
+#, python-format
+msgid "Payment Term:"
+msgstr "Plazo de pago:"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:117
+#, python-format
+msgid "Price Unit"
+msgstr "Precio / Ud."
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/js/quick_sale.js:484
+#, python-format
+msgid "Product Large Image"
+msgstr "Imagen del producto"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:108
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:203
+#, python-format
+msgid "Product Name"
+msgstr "Nombre del Producto"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:114
+#, python-format
+msgid "Qty."
+msgstr "Uds."
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:206
+#, python-format
+msgid "Quantity"
+msgstr "Unidades"
+
+#. module: liderit_aspl_quick_sale
+#: model:ir.ui.menu,name:liderit_aspl_quick_sale.menu_quick_sale
+#: view:sale.order:liderit_aspl_quick_sale.view_order_form_ace
+msgid "Quick Sale"
+msgstr "Venta Rápida"
+
+#. module: liderit_aspl_quick_sale
+#: model:ir.actions.client,name:liderit_aspl_quick_sale.action_open_quick_sale
+#: model:ir.actions.client,name:liderit_aspl_quick_sale.sale_order_form_action_open_quick_sale
+msgid "Quick Sale Order"
+msgstr "Pedidos en Venta Rápida"
+
+#. module: liderit_aspl_quick_sale
+#: model:ir.model,name:liderit_aspl_quick_sale.model_sale_order
+msgid "Sales Order"
+msgstr "Pedido de venta"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:64
+#, python-format
+msgid "Search Sale Order..."
+msgstr "Buscar Pedido..."
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:93
+#, python-format
+msgid "Search product by name or barcode."
+msgstr "Buscar producto por nombre o código de barras"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:135
+#, python-format
+msgid "Sin Cargo"
+msgstr "Sin Cargo"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:120
+#, python-format
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:252
+#, python-format
+msgid "Total Products"
+msgstr "Nº de Productos"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:248
+#, python-format
+msgid "Total Quantity"
+msgstr "Uds. vendidas"
+
+#. module: liderit_aspl_quick_sale
+#. openerp-web
+#: code:addons/liderit_aspl_quick_sale/static/src/xml/pos.xml:192
+#, python-format
+msgid "Variants"
+msgstr "Variantes"
+
+#. module: liderit_aspl_quick_sale
+#: model:res.partner,property_payment_term_name:0
+msgid "Vencimiento 120-150"
+msgstr "Vencimiento 120-150"
+
+#. module: liderit_aspl_quick_sale
+#: model:res.partner,property_payment_term_name:0
+msgid "Vencimiento 30 60"
+msgstr "Vencimiento 30 60"
+
+#. module: liderit_aspl_quick_sale
+#: model:res.partner,property_payment_term_name:0
+msgid "Vencimiento 30 60 90 120"
+msgstr "Vencimiento 30 60 90 120"
+
+#. module: liderit_aspl_quick_sale
+#: model:res.partner,property_payment_term_name:0
+msgid "Vencimiento 30 días"
+msgstr "Vencimiento 30 días"
+
+#. module: liderit_aspl_quick_sale
+#: model:res.partner,property_payment_term_name:0
+msgid "Vencimiento 30-60-90"
+msgstr "Vencimiento 30-60-90"
+
+#. module: liderit_aspl_quick_sale
+#: model:res.partner,property_payment_term_name:0
+msgid "Vencimiento 60 90"
+msgstr "Vencimiento 60 90"
+
+#. module: liderit_aspl_quick_sale
+#: model:res.partner,property_payment_term_name:0
+msgid "Vencimiento 60-90-120"
+msgstr "Vencimiento 60-90-120"
+
+#. module: liderit_aspl_quick_sale
+#: model:res.partner,property_payment_term_name:0
+msgid "Vencimiento 60-90-120-150-180-210"
+msgstr "Vencimiento 60-90-120-150-180-210"
+
+#. module: liderit_aspl_quick_sale
+#: model:res.partner,property_payment_term_name:0
+msgid "Vencimiento 8 días"
+msgstr "Vencimiento 8 días"
+
+#. module: liderit_aspl_quick_sale
+#: model:res.partner,property_payment_term_name:0
+msgid "Vencimiento 90-120"
+msgstr "Vencimiento 90-120"
+
+#. module: liderit_aspl_quick_sale
+#: model:res.partner,property_payment_term_name:0
+msgid "Vencimiento a 15 días"
+msgstr "Vencimiento a 15 días"
+
+#. module: liderit_aspl_quick_sale
+#: model:res.partner,property_payment_term_name:0
+msgid "Vencimiento a 60"
+msgstr "Vencimiento a 60"
+
+#. module: liderit_aspl_quick_sale
+#: model:res.partner,property_payment_term_name:0
+msgid "Vencimiento a 90 días"
+msgstr "Vencimiento a 90 días"

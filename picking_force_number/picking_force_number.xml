@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+        <record id="force_stock_picking_form" model="ir.ui.view">
+            <field name="name">force.stock.picking.form</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"></field>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/h1/field[@name='name']" position="attributes">
+                    <attribute name="readonly">0</attribute>
+                </xpath>
+            </field>
+        </record>
+
+</data>
+</openerp>

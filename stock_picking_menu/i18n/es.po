@@ -1,0 +1,66 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* stock_picking_menu
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-06-21 11:37+0000\n"
+"PO-Revision-Date: 2018-06-21 13:41+0100\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.6.10\n"
+"Language: es\n"
+
+#. module: stock_picking_menu
+#: model:ir.actions.act_window,help:stock_picking_menu.action_picking_tree_incoming
+#: model:ir.actions.act_window,help:stock_picking_menu.action_picking_tree_internal
+#: model:ir.actions.act_window,help:stock_picking_menu.action_picking_tree_outgoing
+msgid ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                Click to create a stock operation. \n"
+"              </p><p>\n"
+"                Most operations are prepared automatically by Odoo "
+"according\n"
+"                to your preconfigured logistics rules, but you can also "
+"record\n"
+"                manual stock movements.\n"
+"              </p>\n"
+"            "
+msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"Pulse para crear una operación de existencias.\n"
+"</p><p>\n"
+"La mayoría de las operaciones se preparan automáticamente por Odoo\n"
+"de acuerdo con sus reglas logísticas preconfiguradas, pero puede \n"
+"también registrar movimientos de existencias manuales.\n"
+"</p>\n"
+"            "
+
+#. module: stock_picking_menu
+#: model:ir.actions.act_window,name:stock_picking_menu.action_picking_tree_outgoing
+#: model:ir.ui.menu,name:stock_picking_menu.menu_action_picking_tree_outgoing
+msgid "Delivery Orders"
+msgstr "Salidas"
+
+#. module: stock_picking_menu
+#: model:ir.actions.act_window,name:stock_picking_menu.action_picking_tree_internal
+#: model:ir.ui.menu,name:stock_picking_menu.menu_action_picking_tree_internal
+msgid "Internal Transfers"
+msgstr "Transferencias"
+
+#. module: stock_picking_menu
+#: model:ir.model,name:stock_picking_menu.model_stock_picking
+msgid "Picking List"
+msgstr "Albarán"
+
+#. module: stock_picking_menu
+#: model:ir.actions.act_window,name:stock_picking_menu.action_picking_tree_incoming
+#: model:ir.ui.menu,name:stock_picking_menu.menu_action_picking_tree_incoming
+msgid "Receipts"
+msgstr "Recepciones"

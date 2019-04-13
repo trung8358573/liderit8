@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- 
+             Add the payment mode term filter settings
+        -->
+        <record id="view_create_payment_order_inherit" model="ir.ui.view">
+            <field name="name">create.payment.order.form.inherit</field>
+            <field name="model">payment.order.create</field>
+            <field name="inherit_id" ref="account_payment_partner.view_create_payment_order"/>
+            <field name="arch" type="xml">
+                <field name="payment_mode" position="after">
+                        <field name="invoice_min_date" attrs="{'invisible': [('invoice', '=', False)]}"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

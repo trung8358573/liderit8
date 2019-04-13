@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data> 
+
+		<record id="view_cobros_devueltos" model="ir.ui.view">
+            <field name="name">Efectos por cobros devueltos</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account.view_move_line_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='reconcile_partial_id']" position="after">
+                   	<field name="devolucion_cobro" readonly="True" />
+               	</xpath>
+            </field>
+        </record>
+
+
+    <record id="search_cobros_devueltos" model="ir.ui.view">
+            <field name="name">Filtro por cobros devueltos</field>
+            <field name="model">account.move.line</field>
+            <field name="inherit_id" ref="account_due_list.view_payments_filter"/>
+            <field name="arch" type="xml">
+              <search string="Search Payments" position="inside">
+                <filter name="cobros_devueltos" string="Impagados" domain="[('devolucion_cobro', '&lt;&gt;', False)]"/>
+              </search>
+            </field>
+        </record>
+
+
+
+
+
+	</data>
+</openerp>
